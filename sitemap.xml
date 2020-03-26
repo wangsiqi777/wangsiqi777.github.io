@@ -3,26 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://wangsiqi777.github.io/</loc>
+    <loc>https://wangsiqi777.github.io/</loc>
     <lastmod>2020-03-24T09:47:33+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://wangsiqi777.github.io/post/</loc>
+    <loc>https://wangsiqi777.github.io/post/</loc>
     <lastmod>2020-03-24T09:47:33+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://wangsiqi777.github.io/2020/03/24/test/</loc>
+    <loc>https://wangsiqi777.github.io/post/test/</loc>
     <lastmod>2020-03-24T09:47:33+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://wangsiqi777.github.io/categories/</loc>
+    <loc>https://wangsiqi777.github.io/categories/</loc>
   </url>
   
   <url>
-    <loc>http://wangsiqi777.github.io/tags/</loc>
+    <loc>https://wangsiqi777.github.io/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wangsiqi777.github.io/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wangsiqi777.github.io/archives/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wangsiqi777.github.io/search/</loc>
   </url>
   
 </urlset>

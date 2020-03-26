@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>404 Page not found | Daqi23333的杂货小记</title>
-    <meta property="og:title" content="404 Page not found - Daqi23333的杂货小记">
+    <title>归档 | Daqi23333的杂货小记</title>
+    <meta property="og:title" content="归档 - Daqi23333的杂货小记">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="大型电子成长记录册">
-    <meta name="description" content="404 Page not found">
+    <meta name="description" content="努力生活下去会发现，人生中会洒下很多点，看起来似乎毫无联系的这些点，在某天会连成星星。每个人都有属于自己的点和属于自己的星。">
         
     <meta name="author" content="Daqi23333">
-    <meta property="og:url" content="https://wangsiqi777.github.io/404.html">
+    <meta property="og:url" content="https://wangsiqi777.github.io/archives/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -50,7 +50,7 @@
                 <nav id="nav-menu" class="clearfix">
                     <a class="" href="https://wangsiqi777.github.io/">首页</a>
                     
-                    <a  href="https://wangsiqi777.github.io/archives/" title="归档">归档</a>
+                    <a class="current" href="https://wangsiqi777.github.io/archives/" title="归档">归档</a>
                     
                     <a  href="https://wangsiqi777.github.io/about/" title="关于">关于</a>
                     
@@ -66,35 +66,19 @@
 
                 <div class="col-8" id="main">
                     
-<div class="body404">
-    <div class="info404">
-        <header id="header404" class="clearfix">
-            <div class="site-name404"><i>404</i></div>
-        </header>
-        <section>
-            <div class="title404">
-                <p>每一个平凡的日常<br />都是连续发生中的奇迹</p>
-            </div>
-            
-
 <div class="post-archive">
-    <h2>See Also</h2>
+    
+    <h2>2020</h2>
     <ul class="listing">
         
-        <li><a href="/post/test/">Test</a></li>
-        
-        <li><a href="/about/">关于我</a></li>
-        
-        <li><a href="/archives/">归档</a></li>
-        
-        <li><a href="/search/">搜索</a></li>
+        <li>
+            <span class="date">2020/03/24</span>
+            <a href="https://wangsiqi777.github.io/post/test/" title="Test">Test</a>
+        </li>
         
     </ul>
-</div>
+    
 
-            <a rel="nofollow" href="https://wangsiqi777.github.io/" class="index404">回首页看看</a>
-        </section>
-    </div>
 </div>
 
                 </div>
@@ -157,6 +141,59 @@
     </div>
 </footer>
 
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.2.8/raphael.min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/flowchart/1.12.2/flowchart.min.js" crossorigin="anonymous"></script>
+        <script>(function () {
+                if (!window.flowchart) return;
+                const blocks = document.querySelectorAll('pre code.language-flowchart, pre code.language-flow');
+                for (let i = 0; i < blocks.length; i++) {
+                    const block = blocks[i];
+                    const rootElement = block.parentNode;
+                    const container = document.createElement('div');
+                    const id = `js-flowchart-diagrams-${i}`;
+                    container.id = id;
+                    container.className = 'align-center';
+                    container.setAttribute("style", "overFlow-x:auto");
+                    rootElement.parentNode.replaceChild(container, rootElement);
+                    const diagram = flowchart.parse(block.childNodes[0].nodeValue);
+                    diagram.drawSVG(id, window.flowchartDiagramsOptions ? window.flowchartDiagramsOptions : {});
+                }
+            })();
+        </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js" crossorigin="anonymous"></script>
+        <script>(function () {
+            if (!window.Diagram) return;
+            const blocks = document.querySelectorAll('pre code.language-sequence');
+            for (let i = 0; i < blocks.length; i++) {
+                const block = blocks[i];
+                
+                const rootElement = block.parentNode;
+                const container = document.createElement('div');
+                const id = `js-sequence-diag-${i}`;
+                container.id = id;
+                container.className = 'align-center';
+                container.setAttribute("style", "overFlow-x:auto");
+                rootElement.parentNode.replaceChild(container, rootElement);
+
+                const diagram = Diagram.parse(block.childNodes[0].nodeValue);
+                diagram.drawSVG(id, window.sequenceDiagramsOptions
+                    ? window.sequenceDiagramsOptions
+                    : { theme: 'simple' });
+            }
+        })();
+        </script><script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 <a id="rocket" href="#top"></a>
