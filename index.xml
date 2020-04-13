@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Daqi23333的杂货小记</title>
+    <link>https://wangsiqi777.github.io/</link>
+    <description>Recent content on Daqi23333的杂货小记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 24 Mar 2020 09:47:33 +0800</lastBuildDate>
+    
+	<atom:link href="https://wangsiqi777.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Test</title>
+      <link>https://wangsiqi777.github.io/post/test/</link>
+      <pubDate>Tue, 24 Mar 2020 09:47:33 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>https://wangsiqi777.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/about/</guid>
+      <description>四川大学 2017级 计算机科学与技术 QQ：3301849024 Wechat: wsq13060078517</description>
+    </item>
+    
+    <item>
+      <title>归档</title>
+      <link>https://wangsiqi777.github.io/archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/archives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>搜索</title>
+      <link>https://wangsiqi777.github.io/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/search/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
