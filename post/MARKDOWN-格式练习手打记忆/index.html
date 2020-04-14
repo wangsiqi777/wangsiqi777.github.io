@@ -16,7 +16,7 @@
     <meta property="article:modified_time" content='2020-03-31T12:11:30&#43;08:00'>
         
     <meta name="Keywords" content="大型电子成长记录册">
-    <meta name="description" content="MARKDOWN 格式练习手打记忆">
+    <meta name="description" content="从零开始搭建属于自己的静态网站">
         
     <meta name="author" content="Daqi23333">
     <meta property="og:url" content="https://wangsiqi777.github.io/post/MARKDOWN-%E6%A0%BC%E5%BC%8F%E7%BB%83%E4%B9%A0%E6%89%8B%E6%89%93%E8%AE%B0%E5%BF%86/">
@@ -71,108 +71,7 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    <style type="text/css">
-    .post-toc {
-        position: fixed;
-        width: 200px;
-        margin-left: -210px;
-        padding: 5px 10px;
-        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
-        font-size: 12px;
-        border: 1px solid rgba(0, 0, 0, .07);
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.98);
-        background-clip: padding-box;
-        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
-        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
-        word-wrap: break-word;
-        white-space: nowrap;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        z-index: 999;
-        cursor: pointer;
-        max-height: 70%;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-
-    .post-toc .post-toc-title {
-        width: 100%;
-        margin: 0 auto;
-        font-size: 20px;
-        font-weight: 400;
-        text-transform: uppercase;
-        text-align: center;
-    }
-
-    .post-toc .post-toc-content {
-        font-size: 15px;
-    }
-
-    .post-toc .post-toc-content>nav>ul {
-        margin: 10px 0;
-    }
-
-    .post-toc .post-toc-content ul {
-        padding-left: 20px;
-        list-style: square;
-        margin: 0.5em;
-        line-height: 1.8em;
-    }
-
-    .post-toc .post-toc-content ul ul {
-        padding-left: 15px;
-        display: none;
-    }
-
-    @media print,
-    screen and (max-width:1057px) {
-        .post-toc {
-            display: none;
-        }
-    }
-</style>
-<div class="post-toc" style="position: absolute; top: 188px;">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#markdown-格式练习手打记忆">MARKDOWN 格式练习手打记忆</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-    </div>
-</div>
-<script type="text/javascript">
-    $(document).ready(function () {
-        var postToc = $(".post-toc");
-        if (postToc.length) {
-            var leftPos = $("#main").offset().left;
-            if(leftPos<220){
-                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
-            }
-
-            var t = postToc.offset().top - 20,
-                a = {
-                    start: {
-                        position: "absolute",
-                        top: t
-                    },
-                    process: {
-                        position: "fixed",
-                        top: 20
-                    },
-                };
-            $(window).scroll(function () {
-                var e = $(window).scrollTop();
-                e < t ? postToc.css(a.start) : postToc.css(a.process)
-            })
-        }
-    })
-</script>
+    
     <article class="post">
         <header>
             <h1 class="post-title">MARKDOWN 格式练习手打记忆</h1>
@@ -181,45 +80,50 @@
             2020年3月31日
         </date>
         
-        
         <div class="post-meta">
-            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
-                    阅读</span></span>
+            <span>|</span>
+            
+            <span class="meta-category"><a href='https://wangsiqi777.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA'>博客搭建</a></span>
+            
         </div>
         
         
+        
         <div class="post-content">
-            <h3 id="markdown-格式练习手打记忆">MARKDOWN 格式练习手打记忆</h3>
-<p>（注意所有文段和最后一个格式符之间都需要一个空格，建议跟着这份文档手打食用更佳哦！）</p>
+            <p>注意所有文段和最后一个格式符之间都需要一个空格，建议跟着这份文档手打食用更佳哦！</p>
 <ul>
-<li>
-<p>标题一共有6级，每增加一个#标题，字号越小，</p>
-</li>
-<li>
-<p>罗列点的时候，在文字前加上一个-或*或+，即有前方这个小圆点</p>
+<li>标题一共有6级，每增加一个#标题，字号越小，</li>
+<li>罗列点的时候，在文字前加上一个-或*或+，即有前方这个小圆点
 <ol>
 <li>标序号的罗列方法，数字和点加上空格，即如前方所示</li>
 </ol>
 </li>
-<li>
-<p>多次回车可以退出上述点和数字序号的换行自动编辑</p>
-</li>
+<li>多次回车可以退出上述点和数字序号的换行自动编辑</li>
 </ul>
-<blockquote>
-<p>调用注释或引用他人文字，在文字前加上&gt;,即如前方所示</p>
-</blockquote>
 <p>调用斜体，使用*或_，放在需要变斜体的左右</p>
-<blockquote>
-<p><em>普通斜体</em> : 一个*或_</p>
-<p><strong>普通粗体</strong>：两个*或_</p>
-<p><em><strong>粗斜体</strong></em>  : 三个*或_</p>
-</blockquote>
-<ul>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"> <span style="color:#000;font-style:italic">*普通斜体*</span> : 一个*或_
+
+ <span style="font-weight:bold">**普通粗体**</span>：两个*或_
+
+ <span style="font-weight:bold">***粗斜体**</span>*  : 三个*或_
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>文字内联链接</li>
 </ul>
-<p>[显示文本] [链接地址] ：[Daqi23333的杂货小记][https://wangsiqi777.github.io/]</p>
+<p>[显示文本] (链接地址) ：<a href="https://wangsiqi777.github.io/">Daqi23333的杂货小记</a></p>
+<p>注：markdown后面一个可以用[],但hugo中只认()</p>
 <ul>
-<li>放代码: esc按键下面 英文模式 ```</li>
+<li>放代码: 英文模式下esc下面的按键</li>
 </ul>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -236,36 +140,17 @@
 </div><ul>
 <li>放图片: !加上[]加上(输入图片路径)：</li>
 </ul>
-<p><!-- raw HTML omitted --></p>
-<ul>
-<li>脚注: 使用[^], 这是脚注[^1]</li>
-</ul>
-<blockquote>
-<p>^符号：shift+6</p>
-</blockquote>
-<ul>
-<li>分割线：在一行使用3个以上的*或-，下面是一条没有感情的分割线</li>
-</ul>
-<hr>
+<p><img src="/jennie.jpg" alt=""></p>
 <ul>
 <li>
 <p>删除线：<del>文本两端</del>加上~~</p>
 </li>
 <li>
-<p>文本缩进:</p>
+<p>表格 ：使用 |列名|列名|，即可调用出来</p>
 </li>
 </ul>
-<blockquote>
-<p>  在段首输入&amp;ensp；即可退后半个中文字符，如前方所示</p>
-<p>    在段首输入两个&amp;emsp；即可退后两个中文字符，如前方所示</p>
-</blockquote>
-<ul>
-<li>表格 ：使用 |列名|列名|，即可调用出来</li>
-</ul>
-<blockquote>
-<p>可通过|：&mdash;|设置列的格式，：在左边居左，右边居右，两边都有居中</p>
-</blockquote>
-<table>
+<pre><code>可通过|：---|设置列的格式，：在左边居左，右边居右，两边都有居中
+</code></pre><table>
 <thead>
 <tr>
 <th>列名1</th>
@@ -314,7 +199,11 @@
 
         <div class="post-meta meta-tags">
             
-            没有标签
+            <ul class="clearfix">
+                
+                <li><a href='https://wangsiqi777.github.io/tags/hugo'>hugo</a></li>
+                
+            </ul>
             
         </div>
     </article>
@@ -395,6 +284,12 @@
         <h3 class="widget-title">分类</h3>
 <ul class="widget-list">
     
+    <li><a href="https://wangsiqi777.github.io/categories/java%E5%AE%9E%E6%88%98%E4%B9%8B%E8%B7%AF/">java实战之路 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E9%A2%84%E5%A4%87%E7%A0%94%E7%A9%B6%E7%94%9F/">预备研究生 (1)</a></li>
+    
 </ul>
     </section>
 
@@ -420,8 +315,6 @@
     <footer id="footer">
     <div class="container">
         &copy; 2020 <a href="https://wangsiqi777.github.io/">Daqi23333的杂货小记 By Daqi23333</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
         
     </div>
 </footer>
@@ -497,12 +390,12 @@ if (!doNotTrack) {
 
 
 
-    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
 
+    <script src='/js/#ZgotmplZ'></script>
 
-    <script src='/js/douban.js'></script>
+    <script src='/js/#ZgotmplZ'></script>
 
 </body>
 

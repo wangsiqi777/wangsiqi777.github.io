@@ -71,108 +71,7 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    <style type="text/css">
-    .post-toc {
-        position: fixed;
-        width: 200px;
-        margin-left: -210px;
-        padding: 5px 10px;
-        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
-        font-size: 12px;
-        border: 1px solid rgba(0, 0, 0, .07);
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.98);
-        background-clip: padding-box;
-        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
-        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
-        word-wrap: break-word;
-        white-space: nowrap;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        z-index: 999;
-        cursor: pointer;
-        max-height: 70%;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-
-    .post-toc .post-toc-title {
-        width: 100%;
-        margin: 0 auto;
-        font-size: 20px;
-        font-weight: 400;
-        text-transform: uppercase;
-        text-align: center;
-    }
-
-    .post-toc .post-toc-content {
-        font-size: 15px;
-    }
-
-    .post-toc .post-toc-content>nav>ul {
-        margin: 10px 0;
-    }
-
-    .post-toc .post-toc-content ul {
-        padding-left: 20px;
-        list-style: square;
-        margin: 0.5em;
-        line-height: 1.8em;
-    }
-
-    .post-toc .post-toc-content ul ul {
-        padding-left: 15px;
-        display: none;
-    }
-
-    @media print,
-    screen and (max-width:1057px) {
-        .post-toc {
-            display: none;
-        }
-    }
-</style>
-<div class="post-toc" style="position: absolute; top: 188px;">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#java-实战之路">java 实战之路</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-    </div>
-</div>
-<script type="text/javascript">
-    $(document).ready(function () {
-        var postToc = $(".post-toc");
-        if (postToc.length) {
-            var leftPos = $("#main").offset().left;
-            if(leftPos<220){
-                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
-            }
-
-            var t = postToc.offset().top - 20,
-                a = {
-                    start: {
-                        position: "absolute",
-                        top: t
-                    },
-                    process: {
-                        position: "fixed",
-                        top: 20
-                    },
-                };
-            $(window).scroll(function () {
-                var e = $(window).scrollTop();
-                e < t ? postToc.css(a.start) : postToc.css(a.process)
-            })
-        }
-    })
-</script>
+    
     <article class="post">
         <header>
             <h1 class="post-title">java 实战之路</h1>
@@ -181,16 +80,17 @@
             2020年3月31日
         </date>
         
-        
         <div class="post-meta">
-            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
-                    阅读</span></span>
+            <span>|</span>
+            
+            <span class="meta-category"><a href='https://wangsiqi777.github.io/categories/java%E5%AE%9E%E6%88%98%E4%B9%8B%E8%B7%AF'>java实战之路</a></span>
+            
         </div>
         
         
+        
         <div class="post-content">
-            <h3 id="java-实战之路">java 实战之路</h3>
-<ol>
+            <ol>
 <li>
 <p>入手建议</p>
 <ul>
@@ -229,22 +129,13 @@
 <p>推荐的阅读项目：</p>
 <ul>
 <li>
-<p>hutool（java工具集）</p>
-<blockquote>
-<p>注释十分清楚，结构也很清晰</p>
-</blockquote>
+<p>hutool（java工具集）：注释十分清楚，结构也很清晰</p>
 </li>
 <li>
-<p>PiggyMetrics（springboot, springcloud）</p>
-<blockquote>
-<p>多模块，较为复杂</p>
-</blockquote>
+<p>PiggyMetrics（springboot, springcloud）：多模块，较为复杂</p>
 </li>
 <li>
-<p>HanLP</p>
-<blockquote>
-<p>NLP自然语言处理，例子和算法解释得十分清楚</p>
-</blockquote>
+<p>HanLP：NLP自然语言处理，例子和算法解释得十分清楚</p>
 </li>
 </ul>
 </li>
@@ -258,56 +149,37 @@
 </ul>
 </li>
 </ol>
-<hr>
-<h5 id="以下为随意记的笔记">以下为随意记的笔记：</h5>
-<h5 id="1-认识源代码">1. 认识源代码</h5>
+<h3 id="以下为随意记的笔记">以下为随意记的笔记：</h3>
+<h3 id="1认识源代码">1.认识源代码</h3>
 <p>首先java一般有两个下项目框架： maven/gradle</p>
 <p>以gradle为例，打开src-&gt;build.gradle记录所有依赖的包文件</p>
 <p>而maven是记录在pom.xml中</p>
 <p>通过这个文件的阅读可以知道，这个项目用了哪些技术点</p>
-<h5 id="2-项目结构只看src下面的-以halo项目为例子">2. 项目结构：只看src下面的 (以Halo项目为例子)</h5>
-<h5 id="src-main">src-&gt;main</h5>
-<ul>
-<li>
-<p>**-&gt;java **（Java源代码）</p>
-<blockquote>
+<h3 id="2项目结构只看src下面的-以halo项目为例子">2.项目结构：只看src下面的 (以Halo项目为例子)</h3>
+<h4 id="src-main">src-&gt;main</h4>
+<h4 id="-javajava源代码">-&gt;java（Java源代码）</h4>
 <p>第一步运行！ springboots项目入口在-&gt;run.halo.app-&gt;utils-&gt;Application</p>
-</blockquote>
-<ul>
-<li>可以从<strong>controller</strong>开始看起：控制器，它记录了前后端交互所调用的接口</li>
-</ul>
-<blockquote>
+<p>可以从<strong>controller</strong>开始看起：控制器，它记录了前后端交互所调用的接口</p>
 <p>可以通过点击函数名，跳转到具体的函数位置，如果是接口，点击行前<code>左侧向下的箭头</code>跳转至实现的函数位置，再点击左上方<code>小轮子</code> ，目录也会定位到这个函数当前位置</p>
-</blockquote>
-<ul>
-<li>一般会到<strong>service</strong>，它是为contoller进行服务，实现具体业务</li>
-<li><strong>repository</strong>数据库相关操作</li>
-<li><strong>model</strong>记录一系列封装对象</li>
-</ul>
-<blockquote>
-<p>(不是主要需要看的)</p>
-<p>util工具类</p>
-<p>security登录安全认证</p>
-</blockquote>
-</li>
-<li>
-<p>**-&gt;resources **（资源文件）</p>
+<p>一般会到service，它是为contoller进行服务，实现具体业务</p>
+<p>repository数据库相关操作</p>
+<p>model记录一系列封装对象</p>
+<pre><code>(不是主要需要看的)
+
+util工具类
+
+security登录安全认证
+</code></pre><h4 id="-resources-资源文件">-&gt;resources （资源文件）</h4>
 <p>templates里面</p>
-<ul>
-<li>配置文件 <code>.yaml</code></li>
-<li><code>banner.txt</code> 设置命令行启动效果,springboots可以自动识别</li>
-<li>-&gt;themes.anatole/common-&gt;source <code>.ftl</code> 静态页面文件，包括侧边栏等等</li>
-</ul>
+<p>配置文件 <code>.yaml</code></p>
+<p><code>banner.txt</code> 设置命令行启动效果,springboots可以自动识别</p>
+<p>-&gt;themes.anatole/common-&gt;source <code>.ftl</code> 静态页面文件，包括侧边栏等等</p>
 <p>admin/static.js/templates里面都是与前端相关的CSS等等文件</p>
-</li>
-</ul>
-<h5 id="ps建议从springboots开始入手学不用先从很底端开始">PS：建议从springboots开始入手学，不用先从很底端开始</h5>
-<h5 id="3-调试">3. 调试</h5>
+<p>PS：建议从springboots开始入手学，不用先从很底端开始</p>
+<h3 id="3调试">3.调试</h3>
 <p>右上方有一个小虫子，点击开始调试模式</p>
 <p>打开网页的应用，按下F12，打开调试界面</p>
-<blockquote>
-<p>视频后半段有完整的调试解说，有需求的时候跟着搞一遍就可以</p>
-</blockquote>
+<p>(视频后半段有完整的调试解说，有需求的时候跟着搞一遍就可以)</p>
 
         </div>
 
@@ -345,7 +217,11 @@
 
         <div class="post-meta meta-tags">
             
-            没有标签
+            <ul class="clearfix">
+                
+                <li><a href='https://wangsiqi777.github.io/tags/java'>java</a></li>
+                
+            </ul>
             
         </div>
     </article>
@@ -426,6 +302,12 @@
         <h3 class="widget-title">分类</h3>
 <ul class="widget-list">
     
+    <li><a href="https://wangsiqi777.github.io/categories/java%E5%AE%9E%E6%88%98%E4%B9%8B%E8%B7%AF/">java实战之路 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E9%A2%84%E5%A4%87%E7%A0%94%E7%A9%B6%E7%94%9F/">预备研究生 (1)</a></li>
+    
 </ul>
     </section>
 
@@ -451,8 +333,6 @@
     <footer id="footer">
     <div class="container">
         &copy; 2020 <a href="https://wangsiqi777.github.io/">Daqi23333的杂货小记 By Daqi23333</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
         
     </div>
 </footer>
@@ -528,12 +408,12 @@ if (!doNotTrack) {
 
 
 
-    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
 
+    <script src='/js/#ZgotmplZ'></script>
 
-    <script src='/js/douban.js'></script>
+    <script src='/js/#ZgotmplZ'></script>
 
 </body>
 

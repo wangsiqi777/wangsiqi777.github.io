@@ -71,108 +71,7 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    <style type="text/css">
-    .post-toc {
-        position: fixed;
-        width: 200px;
-        margin-left: -210px;
-        padding: 5px 10px;
-        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
-        font-size: 12px;
-        border: 1px solid rgba(0, 0, 0, .07);
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.98);
-        background-clip: padding-box;
-        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
-        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
-        word-wrap: break-word;
-        white-space: nowrap;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        z-index: 999;
-        cursor: pointer;
-        max-height: 70%;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-
-    .post-toc .post-toc-title {
-        width: 100%;
-        margin: 0 auto;
-        font-size: 20px;
-        font-weight: 400;
-        text-transform: uppercase;
-        text-align: center;
-    }
-
-    .post-toc .post-toc-content {
-        font-size: 15px;
-    }
-
-    .post-toc .post-toc-content>nav>ul {
-        margin: 10px 0;
-    }
-
-    .post-toc .post-toc-content ul {
-        padding-left: 20px;
-        list-style: square;
-        margin: 0.5em;
-        line-height: 1.8em;
-    }
-
-    .post-toc .post-toc-content ul ul {
-        padding-left: 15px;
-        display: none;
-    }
-
-    @media print,
-    screen and (max-width:1057px) {
-        .post-toc {
-            display: none;
-        }
-    }
-</style>
-<div class="post-toc" style="position: absolute; top: 188px;">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#如何读论文本科研究生">如何读论文（本科/研究生）</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-    </div>
-</div>
-<script type="text/javascript">
-    $(document).ready(function () {
-        var postToc = $(".post-toc");
-        if (postToc.length) {
-            var leftPos = $("#main").offset().left;
-            if(leftPos<220){
-                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
-            }
-
-            var t = postToc.offset().top - 20,
-                a = {
-                    start: {
-                        position: "absolute",
-                        top: t
-                    },
-                    process: {
-                        position: "fixed",
-                        top: 20
-                    },
-                };
-            $(window).scroll(function () {
-                var e = $(window).scrollTop();
-                e < t ? postToc.css(a.start) : postToc.css(a.process)
-            })
-        }
-    })
-</script>
+    
     <article class="post">
         <header>
             <h1 class="post-title">如何读论文</h1>
@@ -181,49 +80,42 @@
             2020年3月31日
         </date>
         
-        
         <div class="post-meta">
-            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
-                    阅读</span></span>
+            <span>|</span>
+            
+            <span class="meta-category"><a href='https://wangsiqi777.github.io/categories/%E9%A2%84%E5%A4%87%E7%A0%94%E7%A9%B6%E7%94%9F'>预备研究生</a></span>
+            
         </div>
         
         
+        
         <div class="post-content">
-            <h3 id="如何读论文本科研究生">如何读论文（本科/研究生）</h3>
-<ol>
+            <ol>
 <li>
 <p>不建议把所有的论文当作教材精读，只有<strong>少量</strong>的文章值得精读复现：</p>
 <ul>
 <li>
 <p>会议的best paper，或者作oral展示的</p>
-<blockquote>
 <p>出色的论文，很多其他人已经复现或者作者自己有复现</p>
 <p>可以直接调用这些资源，比较复现效果学习</p>
-</blockquote>
 </li>
 <li>
 <p>会议官网</p>
 </li>
 <li>
-<p>[arXiv.org][https://arxiv.org/] 这是论文托管网站，也包含未发表论文</p>
-<blockquote>
+<p><a href="https://arxiv.org/%5D">arXiv.org</a>这是论文托管网站，也包含未发表论文</p>
 <p>看看作者和机构，注意甄别</p>
-</blockquote>
 </li>
 <li>
 <p>Google Scholar：通过输入关键词，来检索相应主题的文献</p>
-<blockquote>
 <p>可以进行订阅，会自动将新的作品发送到邮箱</p>
-</blockquote>
 </li>
 <li>
 <p>Star大佬的Github的论文筛选项目/知乎大V等等</p>
 </li>
 <li>
 <p><strong>著名公开课程课件所引用的文章</strong></p>
-<blockquote>
 <p>思路方法，论文措辞都可以好好研究</p>
-</blockquote>
 </li>
 <li>
 <p>好的机器项目源码注释里所引用的论文</p>
@@ -241,37 +133,25 @@
 </li>
 <li>
 <p>暂定精读后：带着挑对手刺的心态阅读：摘要\ introuction \ conclusion</p>
-<blockquote>
 <p>他是否有效解决了文章提出的问题，效果怎么样</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<blockquote>
 <p><strong>建议打印</strong>，用笔<strong>划取关键词</strong>，在纸上记录我在阅读产生的问题，阅读时寻找答案</p>
-</blockquote>
-</blockquote>
-<ul>
+</li>
 <li>
 <p>确定有价值：继续看算法设计\ 实验效能等等</p>
-<blockquote>
 <p>有图可以看看，能不能先看懂图片</p>
-<p>先重点阅读每一段的第一句或前几句</p>
+<p>重点阅读每一段的第一句或前几句</p>
 <p>算法关注如 to summarize 里面<strong>模型输入啥输出啥</strong></p>
-</blockquote>
 </li>
 <li>
 <p><strong>related work</strong>：</p>
-<blockquote>
-<p>这边文章借鉴了哪些方法，是不是基于什么基础</p>
+<p>这篇文章借鉴了哪些方法，是不是基于什么基础</p>
 <p>与其他人的工作有什么关联，其他人的方法效果比较</p>
-</blockquote>
 </li>
 </ul>
-<ol start="3">
-<li>记笔记</li>
+</li>
+<li>
+<p>记笔记</p>
+</li>
 </ol>
 <ul>
 <li>
@@ -330,7 +210,11 @@
 
         <div class="post-meta meta-tags">
             
-            没有标签
+            <ul class="clearfix">
+                
+                <li><a href='https://wangsiqi777.github.io/tags/%E7%A7%91%E7%A0%94%E7%B4%A0%E5%85%BB'>科研素养</a></li>
+                
+            </ul>
             
         </div>
     </article>
@@ -411,6 +295,12 @@
         <h3 class="widget-title">分类</h3>
 <ul class="widget-list">
     
+    <li><a href="https://wangsiqi777.github.io/categories/java%E5%AE%9E%E6%88%98%E4%B9%8B%E8%B7%AF/">java实战之路 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E9%A2%84%E5%A4%87%E7%A0%94%E7%A9%B6%E7%94%9F/">预备研究生 (1)</a></li>
+    
 </ul>
     </section>
 
@@ -436,8 +326,6 @@
     <footer id="footer">
     <div class="container">
         &copy; 2020 <a href="https://wangsiqi777.github.io/">Daqi23333的杂货小记 By Daqi23333</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
         
     </div>
 </footer>
@@ -513,12 +401,12 @@ if (!doNotTrack) {
 
 
 
-    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
 
+    <script src='/js/#ZgotmplZ'></script>
 
-    <script src='/js/douban.js'></script>
+    <script src='/js/#ZgotmplZ'></script>
 
 </body>
 
