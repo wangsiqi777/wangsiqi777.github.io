@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Daqi23333的杂货小记</title>
+    <link>https://wangsiqi777.github.io/</link>
+    <description>Recent content on Daqi23333的杂货小记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 01 Dec 1998 12:11:47 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangsiqi777.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>机试-敲代码是个好习惯</title>
+      <link>https://wangsiqi777.github.io/post/%E6%95%B2%E4%BB%A3%E7%A0%81%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B9%A0%E6%83%AF-%E6%9C%BA%E8%AF%95%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Wed, 22 Apr 2020 13:54:40 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E6%95%B2%E4%BB%A3%E7%A0%81%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B9%A0%E6%83%AF-%E6%9C%BA%E8%AF%95%E6%8C%87%E5%8D%97/</guid>
+      <description>虽然有过短暂的ACM集训经历，但应付机试显然还是不够Orz 开始好好敲代码啦~ 先上方法论（也是我本次的复习计划总纲） 题量和模块 题量目标：200 刷题方法 分模块刷题，每个模块一次性做完10道左右 每次刷完一个模块，及时写博客总结套路 刷题目录总指挥部： 搜索 简单DP 图论 效果反馈 。。。答主修炼</description>
+    </item>
+    
+    <item>
+      <title>表达学习-2 稀疏表达(BP)</title>
+      <link>https://wangsiqi777.github.io/post/%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0-2-%E7%A8%80%E7%96%8F%E8%A1%A8%E8%BE%BE-BP/</link>
+      <pubDate>Wed, 22 Apr 2020 13:46:55 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0-2-%E7%A8%80%E7%96%8F%E8%A1%A8%E8%BE%BE-BP/</guid>
+      <description>前言 过拟合与规则化 minimize your error while regularizing your parameters 参数太多，会导致我们的模型复杂度上升，容易过拟合，也就是我们的训练误差会很小。 但训练误差小并不是我们的最终目标，我们的目标是希望模型的测试误差小，也就是能准确的预测新的样本。 规则化函数 保证模型“简单”的基础上最小化训练误差，使得到的参数具有好的泛化</description>
+    </item>
+    
+    <item>
+      <title>表达学习-2 稀疏表达(OMP)</title>
+      <link>https://wangsiqi777.github.io/post/%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0-2-%E7%A8%80%E7%96%8F%E8%A1%A8%E8%BE%BE-OMP/</link>
+      <pubDate>Tue, 21 Apr 2020 00:24:29 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0-2-%E7%A8%80%E7%96%8F%E8%A1%A8%E8%BE%BE-OMP/</guid>
+      <description>为什么要稀疏 特征的自动选择 一般来说，xi的大部分元素（也就是特征）都是和最终的输出yi没有关系或者不提供任何信息的。 在最小化目标函数的时候考虑xi这些额外的特征，虽然可以获得更小的训练误差，但在预测新的样本时，这些没用的信息反而会被考虑，从而干扰了对正确yi的预测。 稀疏规则化算子</description>
+    </item>
+    
+    <item>
+      <title>表达学习-1</title>
+      <link>https://wangsiqi777.github.io/post/%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0-1/</link>
+      <pubDate>Mon, 20 Apr 2020 19:40:57 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0-1/</guid>
+      <description>前言 编程：将现实问题进行抽象，化繁为简，可解决。是一种思想。 机器学习：从数据中自动分析获得规律，并利用规律对未知数据进行预测的算法。 机器学习成功的关键：获得好特征（取决于数据的表达or数据特征提取方式） “数据决定了机器学习的上限，而算法只是尽可能逼近这个上限”，这里的数据指的就是</description>
+    </item>
+    
+    <item>
+      <title>java 实战之路</title>
+      <link>https://wangsiqi777.github.io/post/java-%E5%AE%9E%E6%88%98%E4%B9%8B%E8%B7%AF/</link>
+      <pubDate>Tue, 31 Mar 2020 12:11:47 +0000</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/java-%E5%AE%9E%E6%88%98%E4%B9%8B%E8%B7%AF/</guid>
+      <description>入手建议 视频+看书入门：可以先看视频，更容易进入，之后针对不了解的地方看书。看不进去书可以采取抄书的方法，写在博客上之类的。 可以先实现一个最基础的业务：java仓库增删改查，可以先看看别人的项目怎么做，注重业务逻辑的建立，理清楚需要哪几个业务模块 不一定要自己动手造轮子，可以先找找</description>
+    </item>
+    
+    <item>
+      <title>如何读论文</title>
+      <link>https://wangsiqi777.github.io/post/%E5%A6%82%E4%BD%95%E8%AF%BB%E8%AE%BA%E6%96%87/</link>
+      <pubDate>Tue, 31 Mar 2020 12:27:57 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E5%A6%82%E4%BD%95%E8%AF%BB%E8%AE%BA%E6%96%87/</guid>
+      <description>不建议把所有的论文当作教材精读，只有少量的文章值得精读复现： 会议的best paper，或者作oral展示的 出色的论文，很多其他人已经复现或者作者自己有复现 可以直接调用这些资源，比较复现效果学习 会议官网 arXiv.org这是论文托管网站，也包含未发表论文 看看作者和机构，注意甄别 Google S</description>
+    </item>
+    
+    <item>
+      <title>MARKDOWN 格式练习手打记忆</title>
+      <link>https://wangsiqi777.github.io/post/MARKDOWN-%E6%A0%BC%E5%BC%8F%E7%BB%83%E4%B9%A0%E6%89%8B%E6%89%93%E8%AE%B0%E5%BF%86/</link>
+      <pubDate>Tue, 31 Mar 2020 12:11:30 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/MARKDOWN-%E6%A0%BC%E5%BC%8F%E7%BB%83%E4%B9%A0%E6%89%8B%E6%89%93%E8%AE%B0%E5%BF%86/</guid>
+      <description>注意所有文段和最后一个格式符之间都需要一个空格，建议跟着这份文档手打食用更佳哦！ 标题一共有6级，每增加一个#标题，字号越小， 罗列点的时候，在文字前加上一个-或*或+，即有前方这个小圆点 标序号的罗列方法，数字和点加上空格，即如前方所示 多次回车可以退出上述点和数字序号的换行自动编辑 调</description>
+    </item>
+    
+    <item>
+      <title>搭建hugo平台网站（小白指南）</title>
+      <link>https://wangsiqi777.github.io/post/%E6%90%AD%E5%BB%BAhugo%E5%B9%B3%E5%8F%B0%E7%BD%91%E7%AB%99%E5%B0%8F%E7%99%BD%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Tue, 24 Mar 2020 09:47:33 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E6%90%AD%E5%BB%BAhugo%E5%B9%B3%E5%8F%B0%E7%BD%91%E7%AB%99%E5%B0%8F%E7%99%BD%E6%8C%87%E5%8D%97/</guid>
+      <description>搭建hugo平台网站（小白指南） 1.首先尝试的是hexo，页面主题友好，可选择范围广 推荐搭建链接： 2.配置到最后一步，偶然查阅资料发现，hexo在文章数超过200时，会非常缓慢，不适合我这种废话大王。因此选择更换为hugo进行博客搭建 优点：文章数较多的时候，访问速度快；部署到gi</description>
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>https://wangsiqi777.github.io/about/</link>
+      <pubDate>Tue, 01 Dec 1998 12:11:47 +0000</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/about/</guid>
+      <description>四川大学 2017级 计算机科学与技术 预备研究生ing&amp;hellip; 鸡汤达人，积极折腾，勇于尝试~ 努力生活下去会发现，人生中会洒下很多点，看起来似乎毫无联系的这些点，在某天会连成星星。每个人都有属于自己的点和属于自己的星。 联系我： QQ：3301849024 Wechat: wsq13060078517</description>
+    </item>
+    
+    <item>
+      <title>归档</title>
+      <link>https://wangsiqi777.github.io/archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/archives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>搜索</title>
+      <link>https://wangsiqi777.github.io/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/search/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
