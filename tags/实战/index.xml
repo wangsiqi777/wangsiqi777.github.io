@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>实战 on Daqi23333的杂货小记</title>
+    <link>https://wangsiqi777.github.io/tags/%E5%AE%9E%E6%88%98/</link>
+    <description>Recent content in 实战 on Daqi23333的杂货小记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 01 May 2020 11:50:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://wangsiqi777.github.io/tags/%E5%AE%9E%E6%88%98/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>数据挖掘-8-PrefixSpan实战——基因序列的频繁子序列分析</title>
+      <link>https://wangsiqi777.github.io/post/datascience-8-PrefixSpan%E5%AE%9E%E6%88%98/</link>
+      <pubDate>Fri, 01 May 2020 11:50:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/datascience-8-PrefixSpan%E5%AE%9E%E6%88%98/</guid>
+      <description>1.实验目的 读取molecular-biology/promoter-gene-sequences数据集中promoters.data内容，利用prefixspan算法分析第三列基因序列中的频繁子序列。 2.数据集准备 观察原始数据，一共有106条记录，采用wps表格工具导入数据另存</description>
+    </item>
+    
+    <item>
+      <title>数据挖掘-4-FP实战——AAAI-14 Accepted Papers标题分析</title>
+      <link>https://wangsiqi777.github.io/post/datascience-4-FP%E5%AE%9E%E6%88%98/</link>
+      <pubDate>Thu, 30 Apr 2020 23:49:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/datascience-4-FP%E5%AE%9E%E6%88%98/</guid>
+      <description>1.实验目的： 读取[UCI] AAAI-14 Accepted Papers - Papers表格中title内容，利用Apriori关联算法分析标题中哪些单词的组合模式较为频繁，并找出最频繁的10项集。 2.数据集准备 ① 观察[UCI] AAAI-14 Accepted Papers - Papers表格中的原始数据，一共有398条标题，同时还包括摘要、作者等信息。针对分</description>
+    </item>
+    
+    <item>
+      <title>数据挖掘-3-WEKA实战——汽车价格的回归预测</title>
+      <link>https://wangsiqi777.github.io/post/datascience-3/</link>
+      <pubDate>Wed, 29 Apr 2020 23:49:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/datascience-3/</guid>
+      <description>1. weka文件格式 数据集地址 1.1 arff文件格式 arff格式是weka专用的文件格式，全称Attribute-Relation File Format。它是一个ASCII文本文件，记录了一些共享属性的实例。arff格式是由怀卡托大学的计算机科学部门开发的。 arff格式文件主要由两个部分构成：</description>
+    </item>
+    
+  </channel>
+</rss>
