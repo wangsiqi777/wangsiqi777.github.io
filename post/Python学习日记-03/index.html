@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Python学习日记-03-列表/字典/集合 | Daqi23333的杂货小记</title>
+    <meta property="og:title" content="Python学习日记-03-列表/字典/集合 - Daqi23333的杂货小记">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-01-15T14:13:56&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-01-15T14:13:56&#43;08:00'>
+        
+    <meta name="Keywords" content="大型电子成长记录册">
+    <meta name="description" content="Python学习日记-03-列表/字典/集合">
+        
+    <meta name="author" content="Daqi23333">
+    <meta property="og:url" content="https://wangsiqi777.github.io/post/Python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0-03/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+	<script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.5/sakura.js"></script>
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://wangsiqi777.github.io/">
+                        Daqi23333的杂货小记
+                    </a>
+                
+                <p class="description">Hi！这里是daqi的杂货日记，偶尔丧，日常鸡血，欢迎来找我玩~</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://wangsiqi777.github.io/">首页</a>
+                    
+                    <a  href="https://wangsiqi777.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://wangsiqi777.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-列表">1. 列表</a></li>
+        <li><a href="#2-字典">2. 字典</a></li>
+        <li><a href="#3-enumerate函数功能">3. enumerate函数功能</a></li>
+        <li><a href="#4-集合">4. 集合</a></li>
+        <li><a href="#5-tuple方法">5. tuple()方法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">Python学习日记-03-列表/字典/集合</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年1月15日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='https://wangsiqi777.github.io/categories/Python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0'>Python学习日记</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="post-content">
+            <h3 id="1-列表">1. 列表</h3>
+<p>有序，元素可以重复，什么都能装，元素可以变化</p>
+<ul>
+<li>删除</li>
+</ul>
+<pre><code>del 通过索引删除元素：del a[0:2]
+
+remove(值) 删除从左到右第一个值匹配的元素
+
+pop(索引) 删除的是索引位置的元素
+</code></pre><ul>
+<li>
+<p>查询元素是否存在 in</p>
+</li>
+<li>
+<p>嵌套列表的查询</p>
+</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#998;font-style:italic">#通过增加维度对嵌套的列表进行查询</span>
+a <span style="color:#000;font-weight:bold">=</span> [<span style="color:#099">1</span>,<span style="color:#099">2</span>,[<span style="color:#099">1</span>,<span style="color:#099">2</span>,<span style="color:#099">3</span>,[<span style="color:#099">4</span>,<span style="color:#099">5</span>]],<span style="color:#099">3</span>,<span style="color:#099">4</span>]
+b <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">2</span> <span style="color:#000;font-weight:bold">in</span> a[<span style="color:#099">1</span>][<span style="color:#099">3</span>]
+<span style="color:#000;font-weight:bold">print</span>(b)
+
+<span style="color:#999">False</span>
+</code></pre></div><ul>
+<li>添加元素</li>
+</ul>
+<pre><code>append
+extend
+insert
+</code></pre><h3 id="2-字典">2. 字典</h3>
+<p>字典的每个键值(key=&gt;value)对用冒号(<strong>:</strong>)分割，每个对之间用逗号(<strong>,</strong>)分割，整个字典包括在花括号(**{})**中 ,</p>
+<p>键必须是唯一的，值可以取任何数据类型，格式如下所示：</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">d <span style="color:#000;font-weight:bold">=</span> {key1 : value1, key2 : value2 }
+</code></pre></div><ul>
+<li>访问字典里的值</li>
+</ul>
+<p>把相应的键放入到方括号中，如下实例：</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#0086b3">dict</span> <span style="color:#000;font-weight:bold">=</span> {<span style="color:#d14">&#39;Name&#39;</span>: <span style="color:#d14">&#39;Runoob&#39;</span>, <span style="color:#d14">&#39;Age&#39;</span>: <span style="color:#099">7</span>, <span style="color:#d14">&#39;Class&#39;</span>: <span style="color:#d14">&#39;First&#39;</span>}
+<span style="color:#000;font-weight:bold">print</span> (<span style="color:#d14">&#34;dict[&#39;Name&#39;]: &#34;</span>, <span style="color:#0086b3">dict</span>[<span style="color:#d14">&#39;Name&#39;</span>])
+</code></pre></div><ul>
+<li>新增/修改字典</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#0086b3">dict</span> <span style="color:#000;font-weight:bold">=</span> {<span style="color:#d14">&#39;Name&#39;</span>: <span style="color:#d14">&#39;Runoob&#39;</span>, <span style="color:#d14">&#39;Age&#39;</span>: <span style="color:#099">7</span>, <span style="color:#d14">&#39;Class&#39;</span>: <span style="color:#d14">&#39;First&#39;</span>}
+<span style="color:#0086b3">dict</span>[<span style="color:#d14">&#39;Age&#39;</span>] <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">8</span>               <span style="color:#998;font-style:italic"># 更新 Age</span>
+<span style="color:#0086b3">dict</span>[<span style="color:#d14">&#39;School&#39;</span>] <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;菜鸟教程&#34;</span>  <span style="color:#998;font-style:italic"># 添加信息</span>
+</code></pre></div><ul>
+<li>删除</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000;font-weight:bold">del</span> <span style="color:#0086b3">dict</span>[<span style="color:#d14">&#39;Name&#39;</span>] <span style="color:#998;font-style:italic"># 删除键 &#39;Name&#39;</span>
+<span style="color:#0086b3">dict</span><span style="color:#000;font-weight:bold">.</span>clear()     <span style="color:#998;font-style:italic"># 清空字典</span>
+<span style="color:#000;font-weight:bold">del</span> <span style="color:#0086b3">dict</span>         <span style="color:#998;font-style:italic"># 删除字典</span>
+</code></pre></div><ul>
+<li>字典 in 操作符</li>
+</ul>
+<p>Python 字典 <strong>in</strong> 操作符用于判断键是否存在于字典中，如果键在字典 dict 里返回 true，否则返回 false。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#0086b3">dict</span> <span style="color:#000;font-weight:bold">=</span> {<span style="color:#d14">&#39;Name&#39;</span>: <span style="color:#d14">&#39;Runoob&#39;</span>, <span style="color:#d14">&#39;Age&#39;</span>: <span style="color:#099">7</span>}
+ <span style="color:#998;font-style:italic"># 检测键 Age 是否存在</span>
+<span style="color:#000;font-weight:bold">if</span>  <span style="color:#d14">&#39;Age&#39;</span> <span style="color:#000;font-weight:bold">in</span> <span style="color:#0086b3">dict</span>:
+    <span style="color:#000;font-weight:bold">print</span>(<span style="color:#d14">&#34;键 Age 存在&#34;</span>)
+<span style="color:#000;font-weight:bold">else</span> :
+    <span style="color:#000;font-weight:bold">print</span>(<span style="color:#d14">&#34;键 Age 不存在&#34;</span>)
+</code></pre></div><ul>
+<li>字典遍历</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#998;font-style:italic">#返回一个序列，序列中保存有字典的所有的键</span>
+<span style="color:#0086b3">dict</span><span style="color:#000;font-weight:bold">.</span>keys()
+<span style="color:#998;font-style:italic">#返回字典所有的值</span>
+<span style="color:#0086b3">dict</span><span style="color:#000;font-weight:bold">.</span>values()
+<span style="color:#998;font-style:italic">#返回一个序列，序列中包含有key,value双值子序列</span>
+<span style="color:#0086b3">dict</span><span style="color:#000;font-weight:bold">.</span>items()
+</code></pre></div><h3 id="3-enumerate函数功能">3. enumerate函数功能</h3>
+<p>enumerate函数原型：</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#0086b3">enumerate</span>(sequence, [start<span style="color:#000;font-weight:bold">=</span><span style="color:#099">0</span>])
+</code></pre></div><p>功能：将可循环序列sequence以start开始分别列出序列数据和数据下标。</p>
+<p>即对一个可遍历的数据对象(如列表、元组或字符串)，enumerate会将该数据对象组合为一个索引序列，</p>
+<p>同时列出<strong>索引</strong>和<strong>索引值</strong>。</p>
+<p><strong>enumerate不可用于字典访问</strong>，字典使用items同时访问key和value。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list1 <span style="color:#000;font-weight:bold">=</span> [<span style="color:#d14">&#39;A&#39;</span>,<span style="color:#d14">&#39;B&#39;</span>,<span style="color:#d14">&#39;C&#39;</span>,<span style="color:#d14">&#39;D&#39;</span>,<span style="color:#d14">&#39;E&#39;</span>]
+<span style="color:#000;font-weight:bold">for</span> index, item <span style="color:#000;font-weight:bold">in</span> <span style="color:#0086b3">enumerate</span>(list1):
+  <span style="color:#000;font-weight:bold">print</span> index, item
+</code></pre></div><h3 id="4-集合">4. 集合</h3>
+<p>集合（set）是一个无序的不重复元素序列。</p>
+<p>可以使用大括号 <strong>{ }</strong> 或者 <strong>set()</strong> 函数创建集合，注意：创建一个空集合必须用 <strong>set()</strong> 而不是 <strong>{ }</strong>，因为 <strong>{ }</strong> 是用来创建一个空字典。创建格式：</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">parame <span style="color:#000;font-weight:bold">=</span> {value01,value02,<span style="color:#000;font-weight:bold">...</span>}
+<span style="color:#998;font-style:italic">#或者</span>
+<span style="color:#0086b3">set</span>(value)
+</code></pre></div><h3 id="5-tuple方法">5. tuple()方法</h3>
+<p>Python的元组与列表类似，不同之处在于元组的元素不能修改,元组使用小括号,列表使用方括号,元组创建很简单,只需要在括号中添加元素,并使用逗号隔开即可。</p>
+<p>Python 元组 tuple() 函数将列表转换为元组。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#0086b3">tuple</span>([<span style="color:#099">1</span>,<span style="color:#099">2</span>,<span style="color:#099">3</span>,<span style="color:#099">4</span>])
+<span style="color:#998;font-style:italic">##输出</span>
+ (<span style="color:#099">1</span>, <span style="color:#099">2</span>, <span style="color:#099">3</span>, <span style="color:#099">4</span>)
+ 
+<span style="color:#0086b3">tuple</span>({<span style="color:#099">1</span>:<span style="color:#099">2</span>,<span style="color:#099">3</span>:<span style="color:#099">4</span>})    <span style="color:#998;font-style:italic">#针对字典 会返回字典的key组成的tuple</span>
+<span style="color:#998;font-style:italic">##输出</span>
+ (<span style="color:#099">1</span>, <span style="color:#099">3</span>)
+ 
+<span style="color:#0086b3">tuple</span>((<span style="color:#099">1</span>,<span style="color:#099">2</span>,<span style="color:#099">3</span>,<span style="color:#099">4</span>))    <span style="color:#998;font-style:italic">#元组会返回元组自身</span>
+<span style="color:#998;font-style:italic">##输出</span>
+ (<span style="color:#099">1</span>, <span style="color:#099">2</span>, <span style="color:#099">3</span>, <span style="color:#099">4</span>)
+</code></pre></div><p>hash不能直接用于 list、set、dictionary</p>
+<p>对于数组的哈希函数设计要清楚数组中取值的范围以及数组的长度，在python中tuple很容易满足这个要求，但是list是可变长度的，长度的变化往往会造成哈希函数取值急剧增长，可能这就是python中不让list支持hashmap，只支持了tuple</p>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://wangsiqi777.github.io/">Daqi23333</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://wangsiqi777.github.io/post/Python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0-03/">https://wangsiqi777.github.io/post/Python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0-03/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0-02/">Python学习日记-02-Pandas快乐入门</a></li>
+        
+        <li><a href="/post/python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/">Python学习日记-01-字符串规整常用方法</a></li>
+        
+        <li><a href="/post/Bp_Rnn/">Bp_Rnn_LSTM</a></li>
+        
+        <li><a href="/post/LSTM/">LSTM</a></li>
+        
+        <li><a href="/post/%E6%A2%AF%E5%BA%A6/">为什么会有“梯度消失”和“梯度爆炸”现象？</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='https://wangsiqi777.github.io/tags/%E5%88%97%E8%A1%A8'>列表</a></li>
+                
+                <li><a href='https://wangsiqi777.github.io/tags/%E5%AD%97%E5%85%B8'>字典</a></li>
+                
+                <li><a href='https://wangsiqi777.github.io/tags/%E9%9B%86%E5%90%88'>集合</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "http-wangsiqi777-github-io-1" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "wangsiqi777/blog_comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://wangsiqi777.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://wangsiqi777.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0-04/" title="Python学习日记-04-windows下python3安装和使用turtle">Python学习日记-04-windows下python3安装和使用turtle</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E6%AF%8D%E4%BA%B2%E8%8A%82/" title="母亲节——turtle绘制火柴人">母亲节——turtle绘制火柴人</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E6%96%B0%E9%97%BB%E5%8F%AF%E8%A7%86%E5%8C%96/" title="新闻可视化——四川大学新生数据可视化实战">新闻可视化——四川大学新生数据可视化实战</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E6%A0%91%E5%8F%AF%E8%A7%86%E5%8C%96/" title="GoTree: A Grammar of Tree Visualizations">GoTree: A Grammar of Tree Visualizations</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E8%BF%90%E5%8A%A8%E5%8F%AF%E8%A7%86%E5%8C%96/" title="State of the Art of Sports Data Visualization">State of the Art of Sports Data Visualization</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/" title="时间管理——张宇宁教授科学网博客整理有感">时间管理——张宇宁教授科学网博客整理有感</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/mitacs/" title="Mitacs英文视频面试经验分享">Mitacs英文视频面试经验分享</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E6%9C%89%E5%85%B3%E7%A7%91%E7%A0%94%E7%9A%84%E6%80%9D%E8%80%83/" title="有关科研的思考">有关科研的思考</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/datascience-14/" title="Datascience 14">Datascience 14</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/datascience-8-PrefixSpan%E5%AE%9E%E6%88%98/" title="数据挖掘-8-PrefixSpan实战——基因序列的频繁子序列分析">数据挖掘-8-PrefixSpan实战——基因序列的频繁子序列分析</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li><a href="https://wangsiqi777.github.io/categories/Python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/">Python学习日记 (4)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/java%E5%AE%9E%E6%88%98%E4%B9%8B%E8%B7%AF/">java实战之路 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E5%A4%A7%E5%88%9B/">大创 (5)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E6%8D%A3%E9%BC%93%E7%82%B9%E5%95%A5/">捣鼓点啥 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/">数据可视化 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/">数据挖掘 (9)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E6%9C%BA%E8%AF%95/">机试 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0/">表达学习 (3)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB/">论文研读 (2)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E9%A2%84%E5%A4%87%E7%A0%94%E7%A9%B6%E7%94%9F/">预备研究生 (5)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://wangsiqi777.github.io/tags/BP/">BP</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/Bp_Rnn_LSTM/">Bp_Rnn_LSTM</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/Data-Preprocessing/">Data Preprocessing</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/GSP/">GSP</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/LSTM/">LSTM</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/MP/">MP</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/Mitacs/">Mitacs</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/OMP/">OMP</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/Pattern-Mining/">Pattern Mining</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/PrefixSpan/">PrefixSpan</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/SPADE/">SPADE</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/hugo/">hugo</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/java/">java</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/pandas/">pandas</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/turtle/">turtle</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/weka/">weka</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/">人脸识别</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E5%88%97%E8%A1%A8/">列表</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E5%AD%97%E5%85%B8/">字典</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E8%A7%84%E6%95%B4/">字符串数据规整</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E5%AE%9E%E6%88%98/">实战</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/">数据集预处理</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E6%96%B0%E9%97%BB%E5%8F%AF%E8%A7%86%E5%8C%96/">新闻可视化</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/">时间管理</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E6%9C%BA%E8%AF%95/">机试</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E6%A0%91%E5%8F%AF%E8%A7%86%E5%8C%96/">树可视化</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E6%A2%AF%E5%BA%A6%E9%97%AE%E9%A2%98/">梯度问题</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E8%AE%A4%E8%AF%86%E6%95%B0%E6%8D%AE%E7%89%B9%E5%BE%81/">认识数据特征</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E8%AF%BB%E8%AE%BA%E6%96%87/">读论文</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E8%BF%90%E5%8A%A8%E5%8F%AF%E8%A7%86%E5%8C%96/">运动可视化</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E9%9B%86%E5%90%88/">集合</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://wangsiqi777.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="https://wangsiqi777.github.io/">Daqi23333的杂货小记 By Daqi23333</a>.
+        
+    </div>
+</footer>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.2.8/raphael.min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/flowchart/1.12.2/flowchart.min.js" crossorigin="anonymous"></script>
+        <script>(function () {
+                if (!window.flowchart) return;
+                const blocks = document.querySelectorAll('pre code.language-flowchart, pre code.language-flow');
+                for (let i = 0; i < blocks.length; i++) {
+                    const block = blocks[i];
+                    const rootElement = block.parentNode;
+                    const container = document.createElement('div');
+                    const id = `js-flowchart-diagrams-${i}`;
+                    container.id = id;
+                    container.className = 'align-center';
+                    container.setAttribute("style", "overFlow-x:auto");
+                    rootElement.parentNode.replaceChild(container, rootElement);
+                    const diagram = flowchart.parse(block.childNodes[0].nodeValue);
+                    diagram.drawSVG(id, window.flowchartDiagramsOptions ? window.flowchartDiagramsOptions : {});
+                }
+            })();
+        </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js" crossorigin="anonymous"></script>
+        <script>(function () {
+            if (!window.Diagram) return;
+            const blocks = document.querySelectorAll('pre code.language-sequence');
+            for (let i = 0; i < blocks.length; i++) {
+                const block = blocks[i];
+                
+                const rootElement = block.parentNode;
+                const container = document.createElement('div');
+                const id = `js-sequence-diag-${i}`;
+                container.id = id;
+                container.className = 'align-center';
+                container.setAttribute("style", "overFlow-x:auto");
+                rootElement.parentNode.replaceChild(container, rootElement);
+
+                const diagram = Diagram.parse(block.childNodes[0].nodeValue);
+                diagram.drawSVG(id, window.sequenceDiagramsOptions
+                    ? window.sequenceDiagramsOptions
+                    : { theme: 'simple' });
+            }
+        })();
+        </script><script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-161949903-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+    <script src='/js/clicklove.js'></script>
+
+    <script src='/js/hexo_resize_image.js'></script>
+
+</body>
+
+</html>

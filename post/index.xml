@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Daqi23333的杂货小记</title>
+    <link>https://wangsiqi777.github.io/post/</link>
+    <description>Recent content in Posts on Daqi23333的杂货小记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 15 May 2020 10:15:57 +0800</lastBuildDate>
+    
+	<atom:link href="https://wangsiqi777.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python学习日记-04-windows下python3安装和使用turtle</title>
+      <link>https://wangsiqi777.github.io/post/python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0-04/</link>
+      <pubDate>Fri, 15 May 2020 10:15:57 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0-04/</guid>
+      <description>turtle（海龟库）是python的一个绘制图像的函数库，它就像海龟一样，给定指令和坐标，在画布坐标系中一步一步绘制出你想要的图形，比如小猪佩奇、哆啦A梦、皮卡丘等。 使用起来还是很有意思的，想使用它制作一个节日礼物，秀一下coding的浪漫，可以看看这篇笔记哦！ 制作20年大仙女</description>
+    </item>
+    
+    <item>
+      <title>母亲节——turtle绘制火柴人</title>
+      <link>https://wangsiqi777.github.io/post/%E6%AF%8D%E4%BA%B2%E8%8A%82/</link>
+      <pubDate>Thu, 14 May 2020 16:23:33 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E6%AF%8D%E4%BA%B2%E8%8A%82/</guid>
+      <description>今年，因为疫情，有了难得的机会在家和大仙女一起过母亲节和520。 之前在大川官微上策划过一篇推送礼物，也亲自上阵画了一道妈妈的味道: 母亲节特供 | 在外奋斗，最想念妈妈的味道 今年想了想，做一份有程序媛气质的礼物吧~ 效果图： 代码： 具体turtle的使用教程可以参考： from turtle import * from time import sleep def go_to(x, y):</description>
+    </item>
+    
+    <item>
+      <title>新闻可视化——四川大学新生数据可视化实战</title>
+      <link>https://wangsiqi777.github.io/post/%E6%96%B0%E9%97%BB%E5%8F%AF%E8%A7%86%E5%8C%96/</link>
+      <pubDate>Thu, 14 May 2020 16:22:38 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E6%96%B0%E9%97%BB%E5%8F%AF%E8%A7%86%E5%8C%96/</guid>
+      <description>前言 两会期间 Who Runs China 爆热无疑传达出新闻数据可视化已经成为数据可视化重要分支的讯号。用准确生动的图表揭露大数据的秘密是老百姓们所喜闻乐见的。 为了宣传可视化社团，我向阿婷提议可以借用我在大川公众号的编辑身份，推出一期可视化推送。但由于缺乏可靠的数据源，迟迟没有定下主题。最后，我们锁定了</description>
+    </item>
+    
+    <item>
+      <title>GoTree: A Grammar of Tree Visualizations</title>
+      <link>https://wangsiqi777.github.io/post/%E6%A0%91%E5%8F%AF%E8%A7%86%E5%8C%96/</link>
+      <pubDate>Thu, 14 May 2020 11:31:12 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E6%A0%91%E5%8F%AF%E8%A7%86%E5%8C%96/</guid>
+      <description>前言 这篇文章来自于北大袁晓汝老师团队发表在发表于ACM CHI 2020的成果。在AI大热的背景下，单纯以问题研制可视化系统似乎变得不太受宠。可以看到袁晓汝老师将目光由定制可视化系统转而投向了帮助用户实现半自动化构建实用视图。这确实是一个很好的思路。其次，本篇文章中对于树结构的递归解构也</description>
+    </item>
+    
+    <item>
+      <title>State of the Art of Sports Data Visualization</title>
+      <link>https://wangsiqi777.github.io/post/%E8%BF%90%E5%8A%A8%E5%8F%AF%E8%A7%86%E5%8C%96/</link>
+      <pubDate>Wed, 13 May 2020 21:41:38 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E8%BF%90%E5%8A%A8%E5%8F%AF%E8%A7%86%E5%8C%96/</guid>
+      <description>简介： 本文将当前运动数据可视化研究根据数据分析特征分为三类： Box-Score Data、Tracking Data 和 Meta Data。并举例详细分析了每类的研究前沿方向。 阅读原因： 这是Mitacs项目Charls Perin教授的论文。我成功匹配到的项目就是他的移动端的运动可视化设计。所以对他的这篇综述进行了精</description>
+    </item>
+    
+    <item>
+      <title>时间管理——张宇宁教授科学网博客整理有感</title>
+      <link>https://wangsiqi777.github.io/post/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Wed, 13 May 2020 21:36:07 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/</guid>
+      <description>应 boss 的要求，对科学网上刘宇宁老师关于本科生科研的建议和时间管理的经验帖进行了整理。在此过程中，也对自己平时的学习习惯和方法进行了反思。 1. 常见问题 制定的计划缺少务虚工作，导致其极度不合理。 计划虽然科学合理，但执行力差。 盲目自信，对自己做某件事情所花的时间缺少正确的认知。 2. 时间管理 时</description>
+    </item>
+    
+    <item>
+      <title>Mitacs英文视频面试经验分享</title>
+      <link>https://wangsiqi777.github.io/post/mitacs/</link>
+      <pubDate>Wed, 13 May 2020 17:48:33 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/mitacs/</guid>
+      <description>由于疫情，今年的mitacs项目已经被取消了。挑选项目，起草英文推荐信，申请，面试，办签证&amp;hellip; &amp;hellip; 忙活了大半个学期，一点也不感到遗憾是不可能的。但万物的来去，都有它自己的时间吧。我也收获了一段难得的如此长久陪在母亲身边的时光，感觉以后无论是读研还是工作，都不会有了。 这篇</description>
+    </item>
+    
+    <item>
+      <title>有关科研的思考</title>
+      <link>https://wangsiqi777.github.io/post/%E6%9C%89%E5%85%B3%E7%A7%91%E7%A0%94%E7%9A%84%E6%80%9D%E8%80%83/</link>
+      <pubDate>Wed, 13 May 2020 10:28:19 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E6%9C%89%E5%85%B3%E7%A7%91%E7%A0%94%E7%9A%84%E6%80%9D%E8%80%83/</guid>
+      <description>最近，在公众号上读到了人大赵鑫老师关于计算机本科生开展科研学习的九问九答，作者以第一人称现身说法的方式解答了本科生在接触科研时的一些常见疑问，条理清晰，言辞恳切，推荐大家去阅读~ 下面我以进入过实验室的本科生视角，来谈一谈自己的一些思考，希望能给到大家更多的帮助和思考。 本科阶段一定</description>
+    </item>
+    
+    <item>
+      <title>Datascience 14</title>
+      <link>https://wangsiqi777.github.io/post/datascience-14/</link>
+      <pubDate>Sat, 09 May 2020 14:39:15 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/datascience-14/</guid>
+      <description>Cluster Analysis 一种无监督的分类方式 高内聚 High 低耦合 Low 聚类结果好坏的主观性很强，有很多相似度的衡量方法 Outliers: those &amp;ldquo;far away&amp;rdquo; from any cluster Partitioning criteria 划分标准 单层次/多层次 Separation of clusters Exclusive（一个对象只能属于一个类别）/ Non-exclusive Similarity measure Distance-based / connectivity-based Clustering space Full space / Subspace Partitioning Algorithm 使得每个对象到对应的聚类中心的距离函数值最小 The K-means Clustering Method 时间复杂度：O(t</description>
+    </item>
+    
+    <item>
+      <title>数据挖掘-8-PrefixSpan实战——基因序列的频繁子序列分析</title>
+      <link>https://wangsiqi777.github.io/post/datascience-8-PrefixSpan%E5%AE%9E%E6%88%98/</link>
+      <pubDate>Fri, 01 May 2020 11:50:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/datascience-8-PrefixSpan%E5%AE%9E%E6%88%98/</guid>
+      <description>1.实验目的 读取molecular-biology/promoter-gene-sequences数据集中promoters.data内容，利用prefixspan算法分析第三列基因序列中的频繁子序列。 2.数据集准备 观察原始数据，一共有106条记录，采用wps表格工具导入数据另存</description>
+    </item>
+    
+    <item>
+      <title>数据挖掘-7-Sequential Pattern Mining</title>
+      <link>https://wangsiqi777.github.io/post/datascience-5-Adfp/</link>
+      <pubDate>Fri, 01 May 2020 10:50:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/datascience-5-Adfp/</guid>
+      <description>1. Sequential Pattern 序列(Sequence)通常以SID表示，一个序列即是一个完整的信息流。每个序列由不同的元素按顺序有序排列，每个元素由不同项目（或者也可以称之为事件）组成。 序列α在数据库S中包含序列支持度的序列个数，记为Support(α) 最小支持度阈值ξ，如果序列αα在序列数据库中的支持</description>
+    </item>
+    
+    <item>
+      <title>数据挖掘-6-高级频繁模式挖掘</title>
+      <link>https://wangsiqi777.github.io/post/datascience-5/</link>
+      <pubDate>Thu, 30 Apr 2020 23:50:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/datascience-5/</guid>
+      <description>1. Mining Multi-Level Associations 挖掘多层次的关联规则 Items often form hierarchies 假设我们使用的是Uniform support（统一的最低支持度），那么如果支持度过低，低层的频繁项集就会较少，导致很多特性显示不出来；如果支持度过高，高层的频繁项集就过多，导致过多无用的特性被展示出来。 1.1 Level-reduced min-support 越低的层有着越低的支持度。 Efficient mining: Shared multi-level mining</description>
+    </item>
+    
+    <item>
+      <title>数据挖掘-4-FP实战——AAAI-14 Accepted Papers标题分析</title>
+      <link>https://wangsiqi777.github.io/post/datascience-4-FP%E5%AE%9E%E6%88%98/</link>
+      <pubDate>Thu, 30 Apr 2020 23:49:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/datascience-4-FP%E5%AE%9E%E6%88%98/</guid>
+      <description>1.实验目的： 读取[UCI] AAAI-14 Accepted Papers - Papers表格中title内容，利用Apriori关联算法分析标题中哪些单词的组合模式较为频繁，并找出最频繁的10项集。 2.数据集准备 ① 观察[UCI] AAAI-14 Accepted Papers - Papers表格中的原始数据，一共有398条标题，同时还包括摘要、作者等信息。针对分</description>
+    </item>
+    
+    <item>
+      <title>数据挖掘-4-频繁模式挖掘</title>
+      <link>https://wangsiqi777.github.io/post/datascience-4/</link>
+      <pubDate>Thu, 30 Apr 2020 23:49:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/datascience-4/</guid>
+      <description>1. Basic Concepts Patterns：海量数据集中，一系列items常常一起发生的情况（如项集、子序列或子结构），是一种对数据的总结。 itemset：若干个物体组成一个集合 k-itemset：k个项组成的集合 absolute/relative support：absolute是计数，relative要除以总次数 如果一个item</description>
+    </item>
+    
+    <item>
+      <title>数据挖掘-3-WEKA实战——汽车价格的回归预测</title>
+      <link>https://wangsiqi777.github.io/post/datascience-3/</link>
+      <pubDate>Wed, 29 Apr 2020 23:49:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/datascience-3/</guid>
+      <description>1. weka文件格式 数据集地址 1.1 arff文件格式 arff格式是weka专用的文件格式，全称Attribute-Relation File Format。它是一个ASCII文本文件，记录了一些共享属性的实例。arff格式是由怀卡托大学的计算机科学部门开发的。 arff格式文件主要由两个部分构成：</description>
+    </item>
+    
+    <item>
+      <title>数据挖掘-2-Data Preprocessing</title>
+      <link>https://wangsiqi777.github.io/post/datascience-2/</link>
+      <pubDate>Wed, 29 Apr 2020 22:49:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/datascience-2/</guid>
+      <description>1. Data Cleaning 数据清理 通过填写缺失的值，光滑噪声数据，识别或删除离群点，并解决不一致性来清理数据。 处理噪声 a、分箱（binning）：通过考察数据的近邻（即周围的值）来光滑有序数据值。 分箱方法实现局部光滑，将有序的值分布到桶或箱中，可用箱均值光滑、箱中位数光滑、箱边界光滑； b、回归（re</description>
+    </item>
+    
+    <item>
+      <title>数据挖掘-1-认识数据</title>
+      <link>https://wangsiqi777.github.io/post/datascience-1/</link>
+      <pubDate>Wed, 29 Apr 2020 21:49:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/datascience-1/</guid>
+      <description>1. Attribute Types 数据特征的类型 Nominal : 一些符号或事物的名称，又被看做是分类的(categorical)。这些值不必具有有意义的序。 Binary : 仅有两个状态。 一个二元属性是对称的，如果它的两种状态具有同等价值并且携带相同的权重；即，关于哪个结果应该用0或1编码并无偏好。 一个二元属性是非对称的，如果其状态</description>
+    </item>
+    
+    <item>
+      <title>机试-敲代码是个好习惯</title>
+      <link>https://wangsiqi777.github.io/post/%E6%95%B2%E4%BB%A3%E7%A0%81%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B9%A0%E6%83%AF-%E6%9C%BA%E8%AF%95%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Wed, 22 Apr 2020 13:54:40 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E6%95%B2%E4%BB%A3%E7%A0%81%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B9%A0%E6%83%AF-%E6%9C%BA%E8%AF%95%E6%8C%87%E5%8D%97/</guid>
+      <description>虽然有过短暂的ACM集训经历，但应付机试显然还是不够Orz 开始好好敲代码啦~ 先上方法论（也是我本次的复习计划总纲） 题量和模块 题量目标：200 刷题方法 分模块刷题，每个模块一次性做完10道左右 每次刷完一个模块，及时写博客总结套路 刷题目录总指挥部： 搜索 简单DP 图论 效果反馈 。。。答主修炼</description>
+    </item>
+    
+    <item>
+      <title>表达学习-2 稀疏表达(BP)</title>
+      <link>https://wangsiqi777.github.io/post/%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0-2-%E7%A8%80%E7%96%8F%E8%A1%A8%E8%BE%BE-BP/</link>
+      <pubDate>Wed, 22 Apr 2020 13:46:55 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0-2-%E7%A8%80%E7%96%8F%E8%A1%A8%E8%BE%BE-BP/</guid>
+      <description>前言 过拟合与规则化 minimize your error while regularizing your parameters 参数太多，会导致我们的模型复杂度上升，容易过拟合，也就是我们的训练误差会很小。 但训练误差小并不是我们的最终目标，我们的目标是希望模型的测试误差小，也就是能准确的预测新的样本。 规则化函数 保证模型“简单”的基础上最小化训练误差，使得到的参数具有好的泛化</description>
+    </item>
+    
+    <item>
+      <title>阅读与管理文献</title>
+      <link>https://wangsiqi777.github.io/post/%E9%98%85%E8%AF%BB%E4%B8%8E%E7%AE%A1%E7%90%86%E6%96%87%E7%8C%AE/</link>
+      <pubDate>Tue, 21 Apr 2020 19:42:57 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E9%98%85%E8%AF%BB%E4%B8%8E%E7%AE%A1%E7%90%86%E6%96%87%E7%8C%AE/</guid>
+      <description>初筛 每次有新项目时，设立一个文件夹 下载文献重命名：编号ID+自己的关键字 使用excel表格：ID，题目，年份，作者（阅读量大了之后，可以发现适合自己阅读习惯的作者，可以尝试模仿他的写作风格），机构，Tag（方便以后检索文章的关键词），Support（简述这篇文章的启发） 以上是阅读</description>
+    </item>
+    
+    <item>
+      <title>表达学习-2 稀疏表达(OMP)</title>
+      <link>https://wangsiqi777.github.io/post/%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0-2-%E7%A8%80%E7%96%8F%E8%A1%A8%E8%BE%BE-OMP/</link>
+      <pubDate>Tue, 21 Apr 2020 00:24:29 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0-2-%E7%A8%80%E7%96%8F%E8%A1%A8%E8%BE%BE-OMP/</guid>
+      <description>为什么要稀疏 特征的自动选择 一般来说，xi的大部分元素（也就是特征）都是和最终的输出yi没有关系或者不提供任何信息的。 在最小化目标函数的时候考虑xi这些额外的特征，虽然可以获得更小的训练误差，但在预测新的样本时，这些没用的信息反而会被考虑，从而干扰了对正确yi的预测。 稀疏规则化算子</description>
+    </item>
+    
+    <item>
+      <title>表达学习-1</title>
+      <link>https://wangsiqi777.github.io/post/%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0-1/</link>
+      <pubDate>Mon, 20 Apr 2020 19:40:57 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0-1/</guid>
+      <description>前言 编程：将现实问题进行抽象，化繁为简，可解决。是一种思想。 机器学习：从数据中自动分析获得规律，并利用规律对未知数据进行预测的算法。 机器学习成功的关键：获得好特征（取决于数据的表达or数据特征提取方式） “数据决定了机器学习的上限，而算法只是尽可能逼近这个上限”，这里的数据指的就是</description>
+    </item>
+    
+    <item>
+      <title>java 实战之路</title>
+      <link>https://wangsiqi777.github.io/post/java-%E5%AE%9E%E6%88%98%E4%B9%8B%E8%B7%AF/</link>
+      <pubDate>Tue, 31 Mar 2020 12:11:47 +0000</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/java-%E5%AE%9E%E6%88%98%E4%B9%8B%E8%B7%AF/</guid>
+      <description>入手建议 视频+看书入门：可以先看视频，更容易进入，之后针对不了解的地方看书。看不进去书可以采取抄书的方法，写在博客上之类的。 可以先实现一个最基础的业务：java仓库增删改查，可以先看看别人的项目怎么做，注重业务逻辑的建立，理清楚需要哪几个业务模块 不一定要自己动手造轮子，可以先找找</description>
+    </item>
+    
+    <item>
+      <title>如何读论文</title>
+      <link>https://wangsiqi777.github.io/post/%E5%A6%82%E4%BD%95%E8%AF%BB%E8%AE%BA%E6%96%87/</link>
+      <pubDate>Tue, 31 Mar 2020 12:27:57 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E5%A6%82%E4%BD%95%E8%AF%BB%E8%AE%BA%E6%96%87/</guid>
+      <description>不建议把所有的论文当作教材精读，只有少量的文章值得精读复现： 会议的best paper，或者作oral展示的出色的论文，很多其他人已经复现或者作者自己有复现 可以直接调用这些资源，比较复现效果学习 会议官网 arXiv.org这是论文托管网站，也包含未发表论文 看看作者和机构，注意甄别 Google S</description>
+    </item>
+    
+    <item>
+      <title>MARKDOWN 格式练习手打记忆</title>
+      <link>https://wangsiqi777.github.io/post/MARKDOWN-%E6%A0%BC%E5%BC%8F%E7%BB%83%E4%B9%A0%E6%89%8B%E6%89%93%E8%AE%B0%E5%BF%86/</link>
+      <pubDate>Tue, 31 Mar 2020 12:11:30 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/MARKDOWN-%E6%A0%BC%E5%BC%8F%E7%BB%83%E4%B9%A0%E6%89%8B%E6%89%93%E8%AE%B0%E5%BF%86/</guid>
+      <description>注意所有文段和最后一个格式符之间都需要一个空格，建议跟着这份文档手打食用更佳哦！ 标题一共有6级，每增加一个#标题，字号越小， 罗列点的时候，在文字前加上一个-或*或+，即有前方这个小圆点 标序号的罗列方法，数字和点加上空格，即如前方所示 多次回车可以退出上述点和数字序号的换行自动编辑 调</description>
+    </item>
+    
+    <item>
+      <title>搭建hugo平台网站（小白指南）</title>
+      <link>https://wangsiqi777.github.io/post/%E6%90%AD%E5%BB%BAhugo%E5%B9%B3%E5%8F%B0%E7%BD%91%E7%AB%99%E5%B0%8F%E7%99%BD%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Tue, 24 Mar 2020 09:47:33 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E6%90%AD%E5%BB%BAhugo%E5%B9%B3%E5%8F%B0%E7%BD%91%E7%AB%99%E5%B0%8F%E7%99%BD%E6%8C%87%E5%8D%97/</guid>
+      <description>搭建hugo平台网站（小白指南） 1.首先尝试的是hexo，页面主题友好，可选择范围广 推荐搭建链接： 2.配置到最后一步，偶然查阅资料发现，hexo在文章数超过200时，会非常缓慢，不适合我这种废话大王。因此选择更换为hugo进行博客搭建 优点：文章数较多的时候，访问速度快；部署到gi</description>
+    </item>
+    
+    <item>
+      <title>Python学习日记-03-列表/字典/集合</title>
+      <link>https://wangsiqi777.github.io/post/Python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0-03/</link>
+      <pubDate>Wed, 15 Jan 2020 14:13:56 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/Python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0-03/</guid>
+      <description>1. 列表 有序，元素可以重复，什么都能装，元素可以变化 删除 del 通过索引删除元素：del a[0:2] remove(值) 删除从左到右第一个值匹配的元素 pop(索引) 删除的是索引位置的元素 查询元素是否存在 in 嵌套列表的查询 #通过增加维度对嵌套的列表进行查询 a = [1,2,[1,2,3,[4,5]],3,4] b = 2 in a[1][3] print(b) False 添加元素 append extend insert 2. 字典 字典的每</description>
+    </item>
+    
+    <item>
+      <title>Python学习日记-02-Pandas快乐入门</title>
+      <link>https://wangsiqi777.github.io/post/python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0-02/</link>
+      <pubDate>Tue, 14 Jan 2020 14:13:56 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0-02/</guid>
+      <description>1. 读取/写入 Pandas常用的有以下三种文件： csv文件 txt文件 xls/xlsx文件 读取/写入文件时的注意事项： 文件路径是否正确，相对路径 ./data 编码方式 分隔符 列名 import pandas as pd import numpy as np #读取csv文件 df = pd.read_csv(&amp;#39;./data./table.csv&amp;#39;) #读取txt文件 df_txt = pd.read_table(&amp;#39;./data./table.txt&amp;#39;) #直接读取可能会出现数据都挤在一列上，可以用sep设置分割符</description>
+    </item>
+    
+    <item>
+      <title>Python学习日记-01-字符串规整常用方法</title>
+      <link>https://wangsiqi777.github.io/post/python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</link>
+      <pubDate>Sat, 11 Jan 2020 14:13:56 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</guid>
+      <description>1. Python格式要求 同一层次的语句必须有相同的缩进，每一组这样的语句称为一个块。 不要混合使用制表符和空格来缩进,因为这在跨越不同的平台的时候,无法正常工作。 ！！！不要把word里的代码粘回编辑器，格式报错到跪下orz 2. 数据导入 常用存储方式：txt、CSV、Excel CSV：第一</description>
+    </item>
+    
+    <item>
+      <title>Bp_Rnn_LSTM</title>
+      <link>https://wangsiqi777.github.io/post/Bp_Rnn/</link>
+      <pubDate>Mon, 29 Apr 2019 18:58:17 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/Bp_Rnn/</guid>
+      <description>BP BP神经网络是线性权重的激活函数模型，即输入一个向量，对向量进行加权处理后输入到隐含层神经元的激活函数当中去，再将函数的输出值进行加权处理最后得到输出层的值。 使用梯度下降方法对参数进行优化。但是该方法在很多情形下无法达到全局最优解，只能达到部分最优解，容易出现“局部收敛”等问题</description>
+    </item>
+    
+    <item>
+      <title>LSTM</title>
+      <link>https://wangsiqi777.github.io/post/LSTM/</link>
+      <pubDate>Sun, 28 Apr 2019 00:31:08 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/LSTM/</guid>
+      <description>LSTM基本概念 长短期记忆模型（long-short term memory）是一种特殊的RNN模型，是为了解决RNN模型梯度弥散的问题而提出的；在传统的RNN中，训练算法使用的是BPTT，当时间比较长时，需要回传的残差会指数下降，导致网络权重更新缓慢，无法体现出RNN的长期记忆的效果，因</description>
+    </item>
+    
+    <item>
+      <title>为什么会有“梯度消失”和“梯度爆炸”现象？</title>
+      <link>https://wangsiqi777.github.io/post/%E6%A2%AF%E5%BA%A6/</link>
+      <pubDate>Sat, 27 Apr 2019 00:31:08 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E6%A2%AF%E5%BA%A6/</guid>
+      <description>1 梯度消失和梯度爆炸的根本原因 梯度消失/爆炸的根源—–深度神经网络和反向传播。 梯度消失经常出现，一是在深层网络中，二是采用了不合适的损失函数，比如sigmoid,tanh。 梯度爆炸一般出现在深层网络和权值初始化值太大的情况下 在于前层上的梯度的计算来自于后层上梯度的乘积（链式法则）</description>
+    </item>
+    
+    <item>
+      <title>不同类别的数据处理——KDDCUP数据预处理（python实现）</title>
+      <link>https://wangsiqi777.github.io/post/%E9%AB%98%E6%95%B0%E9%87%8F%E7%B1%BB%E5%88%AB%E7%89%B9%E5%BE%81%E5%A4%84%E7%90%86/</link>
+      <pubDate>Fri, 26 Apr 2019 00:31:08 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E9%AB%98%E6%95%B0%E9%87%8F%E7%B1%BB%E5%88%AB%E7%89%B9%E5%BE%81%E5%A4%84%E7%90%86/</guid>
+      <description>机器学习中的特征类别：连续型特征和离散型特征 拿到获取的原始特征，必须对每一特征分别进行归一化，比如，特征A的取值范围是[-1000,1000]，特征B的取值范围是[-1,1].如果使用logistic回归，w1x1+w2x2，因为x1的取值太大了，所以x2基本起不了作用。所以，必</description>
+    </item>
+    
+    <item>
+      <title>KDD CUP 99数据集介绍</title>
+      <link>https://wangsiqi777.github.io/post/KDD-CUP-99%E6%95%B0%E6%8D%AE%E9%9B%86%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Thu, 25 Apr 2019 00:31:08 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/KDD-CUP-99%E6%95%B0%E6%8D%AE%E9%9B%86%E4%BB%8B%E7%BB%8D/</guid>
+      <description>KDD CUP 99 dataset：KDD竞赛在1999年举行的数据挖掘与知识发现竞赛时采用的数据集。 该数据集收集了9周时间的TCPdump网络连接和系统审计数据，仿真各种用户类型、各种不同的网络流量和攻击手段。 1.KDDCup99入侵检测实验数据的标识类型 标识类型 含义 Normal 正常记录 DOS 拒绝服务攻击</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangsiqi777.github.io/post/EI%E8%AE%BA%E6%96%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/EI%E8%AE%BA%E6%96%87/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangsiqi777.github.io/post/XAMPP%E9%87%8D%E5%90%AF%E4%B9%8B%E8%B7%AF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/XAMPP%E9%87%8D%E5%90%AF%E4%B9%8B%E8%B7%AF/</guid>
+      <description>XAMPP重启之路 重新安装XAMPP路径出错问题 1.Apache 安装新版xampp后apache无法启动提示：Apache Service detected with wrong path解决方案 首先，检查一下自己的环境变量的path中是否还残留以前自己添加的xampp路径，如果有就删掉，如果没有就进行下一步。 然后就要进入自己的注册表：win</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangsiqi777.github.io/post/%E5%AD%A6%E7%94%9F%E6%95%99%E5%AD%A6%E8%AF%84%E4%BB%B7-Page-Rank-%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E5%AD%A6%E7%94%9F%E6%95%99%E5%AD%A6%E8%AF%84%E4%BB%B7-Page-Rank-%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9E%8B/</guid>
+      <description>传统的教师教学质量评价体系中，教师教学质量包括学生评价 M1（30%）、系部评价 M2（30%）、督导评价 M3（20%）、教务处评价 M4（20%）。 每月底按照教师教学质量综合评分：Y=M1×30%+M2×30%+M3×20%+M4×20%计算出每位教师的综合得分。 在传统的教学评价体系</description>
+    </item>
+    
+  </channel>
+</rss>
