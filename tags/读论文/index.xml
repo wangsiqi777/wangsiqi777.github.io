@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>读论文 on Daqi23333的杂货小记</title>
+    <link>https://wangsiqi777.github.io/tags/%E8%AF%BB%E8%AE%BA%E6%96%87/</link>
+    <description>Recent content in 读论文 on Daqi23333的杂货小记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 31 Mar 2020 12:27:57 +0800</lastBuildDate>
+    
+	<atom:link href="https://wangsiqi777.github.io/tags/%E8%AF%BB%E8%AE%BA%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何读论文</title>
+      <link>https://wangsiqi777.github.io/post/%E5%A6%82%E4%BD%95%E8%AF%BB%E8%AE%BA%E6%96%87/</link>
+      <pubDate>Tue, 31 Mar 2020 12:27:57 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E5%A6%82%E4%BD%95%E8%AF%BB%E8%AE%BA%E6%96%87/</guid>
+      <description>不建议把所有的论文当作教材精读，只有少量的文章值得精读复现： 会议的best paper，或者作oral展示的出色的论文，很多其他人已经复现或者作者自己有复现 可以直接调用这些资源，比较复现效果学习 会议官网 arXiv.org这是论文托管网站，也包含未发表论文 看看作者和机构，注意甄别 Google S</description>
+    </item>
+    
+  </channel>
+</rss>

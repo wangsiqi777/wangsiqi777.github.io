@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>不同类别的数据处理——KDDCUP数据预处理（python实现） | Daqi23333的杂货小记</title>
+    <meta property="og:title" content="不同类别的数据处理——KDDCUP数据预处理（python实现） - Daqi23333的杂货小记">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2019-04-26T00:31:08&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2019-04-26T00:31:08&#43;08:00'>
+        
+    <meta name="Keywords" content="大型电子成长记录册">
+    <meta name="description" content="不同类别的数据处理——KDDCUP数据预处理（python实现）">
+        
+    <meta name="author" content="Daqi23333">
+    <meta property="og:url" content="https://wangsiqi777.github.io/post/%E9%AB%98%E6%95%B0%E9%87%8F%E7%B1%BB%E5%88%AB%E7%89%B9%E5%BE%81%E5%A4%84%E7%90%86/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+	<script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.5/sakura.js"></script>
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://wangsiqi777.github.io/">
+                        Daqi23333的杂货小记
+                    </a>
+                
+                <p class="description">Hi！这里是daqi的杂货日记，偶尔丧，日常鸡血，欢迎来找我玩~</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://wangsiqi777.github.io/">首页</a>
+                    
+                    <a  href="https://wangsiqi777.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://wangsiqi777.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-对于连续性特征">1. 对于连续性特征：</a></li>
+        <li><a href="#2-对于离散性特征">2. 对于离散性特征：</a></li>
+        <li><a href="#1-one-hot-编码">（1） one-hot 编码</a></li>
+        <li><a href="#2-高数量类别">（2） 高数量类别</a></li>
+        <li><a href="#3-kddcup数据预处理">3. KDDCUP数据预处理</a></li>
+        <li><a href="#1one-hot">（1）one-hot</a></li>
+        <li><a href="#2以binary-label为例的-平均数编码-">（2）以binary label为例的 平均数编码 ：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">不同类别的数据处理——KDDCUP数据预处理（python实现）</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年4月26日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='https://wangsiqi777.github.io/categories/%E5%A4%A7%E5%88%9B'>大创</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="post-content">
+            <p>机器学习中的特征类别：<strong>连续型特征</strong>和<strong>离散型特征</strong></p>
+<p>拿到获取的原始特征，必须对每一特征分别进行归一化，比如，特征A的取值范围是[-1000,1000]，特征B的取值范围是[-1,1].如果使用logistic回归，w1<em>x1+w2</em>x2，因为x1的取值太大了，所以x2基本起不了作用。所以，必须进行特征的归一化，每个特征都单独进行归一化。</p>
+<pre><code>什么情况下(不)需要归一化？
+
+- 需要： 基于参数的模型或基于距离的模型，都是要进行特征的归一化。
+- 不需要：基于树的方法是不需要进行特征的归一化，例如随机森林，bagging 和 boosting等。
+</code></pre><h3 id="1-对于连续性特征">1. 对于连续性特征：</h3>
+<p>一般会对数据进行归一化，消除量纲的影响，归一化的方法一般有以下两种：</p>
+<p><strong>（1）min-max标准化（Min-Max Normalization）</strong></p>
+<p>All continuous input that are bounded, rescale them to [-1, 1] through x = (x - min)/(max - min).  线性放缩到[-1,1]</p>
+<p><strong>（2）Z-score标准化方法</strong>:</p>
+<p>All continuous input should be standardized and by this I mean, for every continuous feature, compute its mean (u) and standard deviation (s) and do x = (x - u)/s.    放缩到均值为0，方差为1</p>
+<h3 id="2-对于离散性特征">2. 对于离散性特征：</h3>
+<p><strong>Binarize categorical/discrete features</strong>:</p>
+<p>high-cardinality categorical attributes，从字面上理解，即对于某个category特征，不同值的数量非常多，这里暂且把它叫做高数量类别属性。反之，即低数量类别属性（low-cardinality）</p>
+<p>对于低数量类别属性，通常在data science中采用的方式是将其转化为one-hot编码，即给每一个类别增加一个特征。但是当类别数量增加的时候，ont-hot编码增加的特征也在增加。所以，one-hot编码无法适用于高数量特征属性。</p>
+<h3 id="1-one-hot-编码">（1） one-hot 编码</h3>
+<p>独热码，在英文文献中称做 one-hot code, 直观来说就是<strong>有多少个状态就有多少比特，而且只有一个比特为1，其他全为0的一种码制</strong>。</p>
+<p>EG：假如有三种颜色特征：红、黄、蓝。 在利用机器学习的算法时一般需要进行向量化或者数字化。那么你可能想令 红=1，黄=2，蓝=3. 那么这样其实实现了标签编码，即给不同类别以标签。然而这意味着机器可能会学习到“红&lt;黄&lt;蓝”，但这并不是我们的让机器学习的本意，只是想让机器区分它们，并无大小比较之意。</p>
+<p>因为有三种颜色状态，所以就有3个比特。即红色：1 0 0 ，黄色: 0 1 0，蓝色：0 0 1 。如此一来每两个向量之间的距离都是根号2，在<strong>向量空间距离都相等</strong>，所以这样不会出现偏序性，基本不会影响基于向量空间度量算法的效果。</p>
+<h4 id="--为什么特征向量要映射到欧式空间">- 为什么特征向量要映射到欧式空间？</h4>
+<p>将离散特征通过one-hot编码映射到欧式空间，是因为在回归，分类，聚类等机器学习算法中，特征之间距离的计算或相似度的计算是非常重要的，而我们常用的距离或相似度的计算都是在欧式空间的相似度计算，计算余弦相似性，基于的就是欧式空间。</p>
+<h4 id="--one-hot-编码优缺点">- one-hot 编码优缺点</h4>
+<ul>
+<li>优点：独热编码解决了分类器不好处理属性数据的问题，在一定程度上也起到了<strong>扩充特征</strong>的作用。它的值只有0和1，不同的类型存储在垂直的空间。</li>
+<li>缺点：当类别的数量很多时，<strong>特征空间</strong>会变得非常大。在这种情况下，一般可以用PCA来<strong>减少维度</strong>。而且one hot encoding+PCA这种组合在实际中也非常有用。</li>
+</ul>
+<h3 id="2-高数量类别">（2） 高数量类别</h3>
+<ol>
+<li>LabelEncoder编码高基数定性特征，虽然<strong>只需要一列</strong>，但是每个自然数都具有不同的重要意义，对于y而言<strong>线性不可分</strong>。使用简单模型，容易欠拟合（underfit），无法完全捕获不同类别之间的区别；使用复杂模型，容易在其他地方过拟合（overfit）。</li>
+<li>OneHotEncoder编码高基数定性特征，必然产生<strong>上万列的稀疏矩阵</strong>，易消耗大量内存和训练时间，除非算法本身有相关优化（例：SVM）</li>
+<li>可以尝试使用**平均数编码（mean encoding）**的编码方法</li>
+</ol>
+<h4 id="--mean-encoding-平均数编码">- Mean encoding 平均数编码</h4>
+<pre><code>简单来说，就是将原来独立的高数量类别特征的每个值映射到概率估计上。
+假设在分类问题中，目标y一共有C个不同类别，具体的一个类别用target表示；
+某一个定性特征variable一共有K个不同类别，具体的一个类别用k表示。
+</code></pre><p><img src="/LSTM/26.png" alt="image-20200429204057264"></p>
+<h4 id="--计算先验概率prior与后验概率posterior">- 计算先验概率（prior）与后验概率（posterior）</h4>
+<p><img src="/LSTM/27.png" alt="image-20200429204518267"></p>
+<h3 id="3-kddcup数据预处理">3. KDDCUP数据预处理</h3>
+<h3 id="1one-hot">（1）one-hot</h3>
+<h3 id="2以binary-label为例的-平均数编码-">（2）以binary label为例的 平均数编码 ：</h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000;font-weight:bold">import</span> <span style="color:#555">pandas</span> <span style="color:#000;font-weight:bold">as</span> <span style="color:#555">pd</span>
+<span style="color:#000;font-weight:bold">import</span> <span style="color:#555">numpy</span> <span style="color:#000;font-weight:bold">as</span> <span style="color:#555">np</span>
+<span style="color:#998;font-style:italic"># high-cardinality categorical attributes 高数量类别特征</span>
+<span style="color:#998;font-style:italic">#设定K：min_samples_leaf (int) 10: minimum samples to take category average into account</span>
+<span style="color:#998;font-style:italic">#设定f：smoothing (int) 10: smoothing effect to balance categorical average vs prior</span>
+<span style="color:#998;font-style:italic">#参数f： 控制函数在转折处的斜率，决定了先验概率和后验概率之间的平衡</span>
+<span style="color:#000;font-weight:bold">class</span> <span style="color:#458;font-weight:bold">TargetEncoder</span>(<span style="color:#0086b3">object</span>):
+	<span style="color:#000;font-weight:bold">def</span> __init__(<span style="color:#999">self</span>,tr_df,te_df,smoothing,min_samples_leaf,noise_level,target<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;label&#39;</span>):
+		<span style="color:#999">self</span><span style="color:#000;font-weight:bold">.</span>tr_df<span style="color:#000;font-weight:bold">=</span>tr_df
+		<span style="color:#999">self</span><span style="color:#000;font-weight:bold">.</span>te_df<span style="color:#000;font-weight:bold">=</span>te_df
+		<span style="color:#999">self</span><span style="color:#000;font-weight:bold">.</span>smoothing<span style="color:#000;font-weight:bold">=</span>smoothing
+		<span style="color:#999">self</span><span style="color:#000;font-weight:bold">.</span>min_samples_leaf<span style="color:#000;font-weight:bold">=</span>min_samples_leaf
+		<span style="color:#999">self</span><span style="color:#000;font-weight:bold">.</span>noise_level<span style="color:#000;font-weight:bold">=</span>noise_level
+		<span style="color:#999">self</span><span style="color:#000;font-weight:bold">.</span>target<span style="color:#000;font-weight:bold">=</span>target
+	<span style="color:#998;font-style:italic">#添加噪声</span>
+	<span style="color:#000;font-weight:bold">def</span> <span style="color:#900;font-weight:bold">add_noise</span>(<span style="color:#999">self</span>,series):
+		<span style="color:#000;font-weight:bold">return</span> series <span style="color:#000;font-weight:bold">*</span> (<span style="color:#099">1</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#999">self</span><span style="color:#000;font-weight:bold">.</span>noise_level <span style="color:#000;font-weight:bold">*</span> np<span style="color:#000;font-weight:bold">.</span>random<span style="color:#000;font-weight:bold">.</span>randn(<span style="color:#0086b3">len</span>(series)))
+	<span style="color:#000;font-weight:bold">def</span> <span style="color:#900;font-weight:bold">encode1col</span>(<span style="color:#999">self</span>,col):
+		tr_series<span style="color:#000;font-weight:bold">=</span><span style="color:#999">self</span><span style="color:#000;font-weight:bold">.</span>tr_df[col]
+		te_series<span style="color:#000;font-weight:bold">=</span><span style="color:#999">self</span><span style="color:#000;font-weight:bold">.</span>te_df[col]
+		target_series<span style="color:#000;font-weight:bold">=</span><span style="color:#999">self</span><span style="color:#000;font-weight:bold">.</span>tr_df[<span style="color:#999">self</span><span style="color:#000;font-weight:bold">.</span>target]
+		temp <span style="color:#000;font-weight:bold">=</span> pd<span style="color:#000;font-weight:bold">.</span>concat([tr_series, target_series], axis<span style="color:#000;font-weight:bold">=</span><span style="color:#099">1</span>)
+		<span style="color:#998;font-style:italic">#先使用groupby将枚举型“service”不同类别分组</span>
+		<span style="color:#998;font-style:italic">#使用agg针对不同组别，统计“target”取值的平均值mean和个数count</span>
+		averages <span style="color:#000;font-weight:bold">=</span> temp<span style="color:#000;font-weight:bold">.</span>groupby([col])<span style="color:#000;font-weight:bold">.</span>agg({<span style="color:#999">self</span><span style="color:#000;font-weight:bold">.</span>target:[<span style="color:#d14">&#34;mean&#34;</span>, <span style="color:#d14">&#34;count&#34;</span>]})
+		averages<span style="color:#000;font-weight:bold">.</span>columns<span style="color:#000;font-weight:bold">=</span>[<span style="color:#d14">&#39;mean&#39;</span>,<span style="color:#d14">&#39;count&#39;</span>]
+
+		<span style="color:#998;font-style:italic"># Compute smoothing 定义权重函数</span>
+		smoothing <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span> <span style="color:#000;font-weight:bold">/</span> (<span style="color:#099">1</span> <span style="color:#000;font-weight:bold">+</span> np<span style="color:#000;font-weight:bold">.</span>exp(<span style="color:#000;font-weight:bold">-</span>(averages[<span style="color:#d14">&#34;count&#34;</span>] <span style="color:#000;font-weight:bold">-</span> <span style="color:#999">self</span><span style="color:#000;font-weight:bold">.</span>min_samples_leaf) <span style="color:#000;font-weight:bold">/</span> <span style="color:#999">self</span><span style="color:#000;font-weight:bold">.</span>smoothing))
+		<span style="color:#998;font-style:italic"># 经验贝叶斯</span>
+	        <span style="color:#998;font-style:italic"># 特别的，在target取值只有0和1时，整个“target”平均值即为先验概率</span>
+		prior <span style="color:#000;font-weight:bold">=</span> target_series<span style="color:#000;font-weight:bold">.</span>mean()
+		<span style="color:#998;font-style:italic"># 某一组类别的“target=1”平均值即为后验概率</span>
+		averages[<span style="color:#d14">&#39;encode&#39;</span>] <span style="color:#000;font-weight:bold">=</span> prior <span style="color:#000;font-weight:bold">*</span> (<span style="color:#099">1</span> <span style="color:#000;font-weight:bold">-</span> smoothing) <span style="color:#000;font-weight:bold">+</span> averages[<span style="color:#d14">&#34;mean&#34;</span>] <span style="color:#000;font-weight:bold">*</span> smoothing
+		
+		<span style="color:#998;font-style:italic"># 生成编码列，删除多余列</span>
+		averages<span style="color:#000;font-weight:bold">.</span>drop([<span style="color:#d14">&#34;mean&#34;</span>, <span style="color:#d14">&#34;count&#34;</span>], axis<span style="color:#000;font-weight:bold">=</span><span style="color:#099">1</span>, inplace<span style="color:#000;font-weight:bold">=</span><span style="color:#999">True</span>)
+		<span style="color:#998;font-style:italic"># Apply averages to trn and tst series</span>
+		tr_col_encode<span style="color:#000;font-weight:bold">=</span>pd<span style="color:#000;font-weight:bold">.</span>merge(<span style="color:#999">self</span><span style="color:#000;font-weight:bold">.</span>tr_df,averages<span style="color:#000;font-weight:bold">.</span>reset_index(),how<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;left&#39;</span>,on<span style="color:#000;font-weight:bold">=</span>[col])[<span style="color:#d14">&#39;encode&#39;</span>]<span style="color:#000;font-weight:bold">.</span>rename(col<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">&#34;_encode&#34;</span>)<span style="color:#000;font-weight:bold">.</span>fillna(prior)
+		te_col_encode<span style="color:#000;font-weight:bold">=</span>pd<span style="color:#000;font-weight:bold">.</span>merge(<span style="color:#999">self</span><span style="color:#000;font-weight:bold">.</span>te_df,averages<span style="color:#000;font-weight:bold">.</span>reset_index(),how<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;left&#39;</span>,on<span style="color:#000;font-weight:bold">=</span>[col])[<span style="color:#d14">&#39;encode&#39;</span>]<span style="color:#000;font-weight:bold">.</span>rename(col<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">&#34;_encode&#34;</span>)<span style="color:#000;font-weight:bold">.</span>fillna(prior)
+
+		<span style="color:#000;font-weight:bold">return</span> np<span style="color:#000;font-weight:bold">.</span>concatenate( (np<span style="color:#000;font-weight:bold">.</span>array(<span style="color:#999">self</span><span style="color:#000;font-weight:bold">.</span>add_noise(tr_col_encode)),np<span style="color:#000;font-weight:bold">.</span>array(<span style="color:#999">self</span><span style="color:#000;font-weight:bold">.</span>add_noise(te_col_encode))),axis<span style="color:#000;font-weight:bold">=</span><span style="color:#099">0</span>)<span style="color:#000;font-weight:bold">.</span>reshape([<span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span>,<span style="color:#099">1</span>])
+</code></pre></div>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://wangsiqi777.github.io/">Daqi23333</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://wangsiqi777.github.io/post/%E9%AB%98%E6%95%B0%E9%87%8F%E7%B1%BB%E5%88%AB%E7%89%B9%E5%BE%81%E5%A4%84%E7%90%86/">https://wangsiqi777.github.io/post/%E9%AB%98%E6%95%B0%E9%87%8F%E7%B1%BB%E5%88%AB%E7%89%B9%E5%BE%81%E5%A4%84%E7%90%86/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/KDD-CUP-99%E6%95%B0%E6%8D%AE%E9%9B%86%E4%BB%8B%E7%BB%8D/">KDD CUP 99数据集介绍</a></li>
+        
+        <li><a href="/about/">关于我</a></li>
+        
+        <li><a href="/archives/">归档</a></li>
+        
+        <li><a href="/search/">搜索</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='https://wangsiqi777.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86'>数据集预处理</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "http-wangsiqi777-github-io-1" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "wangsiqi777/blog_comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://wangsiqi777.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://wangsiqi777.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-2/" title="数据结构-2">数据结构-2</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/" title="数据结构-1">数据结构-1</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E6%90%AD%E5%BB%BAhugo%E5%B9%B3%E5%8F%B0%E7%BD%91%E7%AB%99%E5%B0%8F%E7%99%BD%E6%8C%87%E5%8D%97/" title="搭建hugo平台网站（小白指南）">搭建hugo平台网站（小白指南）</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/XAMPP%E9%87%8D%E5%90%AF%E4%B9%8B%E8%B7%AF/" title="XAMPP重启之路">XAMPP重启之路</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0-04/" title="Python学习日记-04-windows下python3安装和使用turtle">Python学习日记-04-windows下python3安装和使用turtle</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E6%AF%8D%E4%BA%B2%E8%8A%82/" title="母亲节——turtle绘制火柴人">母亲节——turtle绘制火柴人</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E6%96%B0%E9%97%BB%E5%8F%AF%E8%A7%86%E5%8C%96/" title="新闻可视化——四川大学新生数据可视化实战">新闻可视化——四川大学新生数据可视化实战</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E6%A0%91%E5%8F%AF%E8%A7%86%E5%8C%96/" title="GoTree: A Grammar of Tree Visualizations">GoTree: A Grammar of Tree Visualizations</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E8%BF%90%E5%8A%A8%E5%8F%AF%E8%A7%86%E5%8C%96/" title="State of the Art of Sports Data Visualization">State of the Art of Sports Data Visualization</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/" title="时间管理——张宇宁教授科学网博客整理有感">时间管理——张宇宁教授科学网博客整理有感</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li><a href="https://wangsiqi777.github.io/categories/Python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/">Python学习日记 (4)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/java%E5%AE%9E%E6%88%98%E4%B9%8B%E8%B7%AF/">java实战之路 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建 (2)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E5%A4%A7%E5%88%9B/">大创 (5)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E6%8D%A3%E9%BC%93%E7%82%B9%E5%95%A5/">捣鼓点啥 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/">数据可视化 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/">数据挖掘 (8)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构 (2)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E6%9C%BA%E8%AF%95/">机试 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0/">表达学习 (3)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB/">论文研读 (2)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E9%A2%84%E5%A4%87%E7%A0%94%E7%A9%B6%E7%94%9F/">预备研究生 (5)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://wangsiqi777.github.io/tags/BP/">BP</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/Bp_Rnn_LSTM/">Bp_Rnn_LSTM</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/Data-Preprocessing/">Data Preprocessing</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/GSP/">GSP</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/LSTM/">LSTM</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/MP/">MP</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/Mitacs/">Mitacs</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/OMP/">OMP</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/Pattern-Mining/">Pattern Mining</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/PrefixSpan/">PrefixSpan</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/SPADE/">SPADE</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/XAMPP/">XAMPP</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/hugo/">hugo</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/java/">java</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/pandas/">pandas</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/turtle/">turtle</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/weka/">weka</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/">人脸识别</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E5%88%97%E8%A1%A8/">列表</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E5%AD%97%E5%85%B8/">字典</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E8%A7%84%E6%95%B4/">字符串数据规整</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E5%AE%9E%E6%88%98/">实战</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/">数据集预处理</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E6%96%B0%E9%97%BB%E5%8F%AF%E8%A7%86%E5%8C%96/">新闻可视化</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/">时间管理</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E6%9C%BA%E8%AF%95/">机试</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E6%A0%91%E5%8F%AF%E8%A7%86%E5%8C%96/">树可视化</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E6%A2%AF%E5%BA%A6%E9%97%AE%E9%A2%98/">梯度问题</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E8%AE%A4%E8%AF%86%E6%95%B0%E6%8D%AE%E7%89%B9%E5%BE%81/">认识数据特征</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E8%AF%BB%E8%AE%BA%E6%96%87/">读论文</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E8%BF%90%E5%8A%A8%E5%8F%AF%E8%A7%86%E5%8C%96/">运动可视化</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E9%9B%86%E5%90%88/">集合</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://wangsiqi777.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="https://wangsiqi777.github.io/">Daqi23333的杂货小记 By Daqi23333</a>.
+        
+    </div>
+</footer>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.2.8/raphael.min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/flowchart/1.12.2/flowchart.min.js" crossorigin="anonymous"></script>
+        <script>(function () {
+                if (!window.flowchart) return;
+                const blocks = document.querySelectorAll('pre code.language-flowchart, pre code.language-flow');
+                for (let i = 0; i < blocks.length; i++) {
+                    const block = blocks[i];
+                    const rootElement = block.parentNode;
+                    const container = document.createElement('div');
+                    const id = `js-flowchart-diagrams-${i}`;
+                    container.id = id;
+                    container.className = 'align-center';
+                    container.setAttribute("style", "overFlow-x:auto");
+                    rootElement.parentNode.replaceChild(container, rootElement);
+                    const diagram = flowchart.parse(block.childNodes[0].nodeValue);
+                    diagram.drawSVG(id, window.flowchartDiagramsOptions ? window.flowchartDiagramsOptions : {});
+                }
+            })();
+        </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js" crossorigin="anonymous"></script>
+        <script>(function () {
+            if (!window.Diagram) return;
+            const blocks = document.querySelectorAll('pre code.language-sequence');
+            for (let i = 0; i < blocks.length; i++) {
+                const block = blocks[i];
+                
+                const rootElement = block.parentNode;
+                const container = document.createElement('div');
+                const id = `js-sequence-diag-${i}`;
+                container.id = id;
+                container.className = 'align-center';
+                container.setAttribute("style", "overFlow-x:auto");
+                rootElement.parentNode.replaceChild(container, rootElement);
+
+                const diagram = Diagram.parse(block.childNodes[0].nodeValue);
+                diagram.drawSVG(id, window.sequenceDiagramsOptions
+                    ? window.sequenceDiagramsOptions
+                    : { theme: 'simple' });
+            }
+        })();
+        </script><script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-161949903-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+    <script src='/js/clicklove.js'></script>
+
+    <script src='/js/hexo_resize_image.js'></script>
+
+</body>
+
+</html>

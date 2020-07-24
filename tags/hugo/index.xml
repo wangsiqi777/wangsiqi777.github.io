@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on Daqi23333的杂货小记</title>
+    <link>https://wangsiqi777.github.io/tags/hugo/</link>
+    <description>Recent content in hugo on Daqi23333的杂货小记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 31 Mar 2020 12:11:30 +0800</lastBuildDate>
+    
+	<atom:link href="https://wangsiqi777.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MARKDOWN 格式练习手打记忆</title>
+      <link>https://wangsiqi777.github.io/post/MARKDOWN-%E6%A0%BC%E5%BC%8F%E7%BB%83%E4%B9%A0%E6%89%8B%E6%89%93%E8%AE%B0%E5%BF%86/</link>
+      <pubDate>Tue, 31 Mar 2020 12:11:30 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/MARKDOWN-%E6%A0%BC%E5%BC%8F%E7%BB%83%E4%B9%A0%E6%89%8B%E6%89%93%E8%AE%B0%E5%BF%86/</guid>
+      <description>注意所有文段和最后一个格式符之间都需要一个空格，建议跟着这份文档手打食用更佳哦！ 标题一共有6级，每增加一个#标题，字号越小， 罗列点的时候，在文字前加上一个-或*或+，即有前方这个小圆点 标序号的罗列方法，数字和点加上空格，即如前方所示 多次回车可以退出上述点和数字序号的换行自动编辑 调</description>
+    </item>
+    
+  </channel>
+</rss>
