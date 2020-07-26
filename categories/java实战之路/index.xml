@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java实战之路 on Daqi23333的杂货小记</title>
+    <link>https://wangsiqi777.github.io/categories/java%E5%AE%9E%E6%88%98%E4%B9%8B%E8%B7%AF/</link>
+    <description>Recent content in java实战之路 on Daqi23333的杂货小记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 31 Mar 2020 12:11:47 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangsiqi777.github.io/categories/java%E5%AE%9E%E6%88%98%E4%B9%8B%E8%B7%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>java 实战之路</title>
+      <link>https://wangsiqi777.github.io/post/java-%E5%AE%9E%E6%88%98%E4%B9%8B%E8%B7%AF/</link>
+      <pubDate>Tue, 31 Mar 2020 12:11:47 +0000</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/java-%E5%AE%9E%E6%88%98%E4%B9%8B%E8%B7%AF/</guid>
+      <description>入手建议 视频+看书入门：可以先看视频，更容易进入，之后针对不了解的地方看书。看不进去书可以采取抄书的方法，写在博客上之类的。 可以先实现一个最基础的业务：java仓库增删改查，可以先看看别人的项目怎么做，注重业务逻辑的建立，理清楚需要哪几个业务模块 不一定要自己动手造轮子，可以先找找</description>
+    </item>
+    
+  </channel>
+</rss>

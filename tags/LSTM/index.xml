@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LSTM on Daqi23333的杂货小记</title>
+    <link>https://wangsiqi777.github.io/tags/LSTM/</link>
+    <description>Recent content in LSTM on Daqi23333的杂货小记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 28 Apr 2019 00:31:08 +0800</lastBuildDate>
+    
+	<atom:link href="https://wangsiqi777.github.io/tags/LSTM/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LSTM</title>
+      <link>https://wangsiqi777.github.io/post/LSTM/</link>
+      <pubDate>Sun, 28 Apr 2019 00:31:08 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/LSTM/</guid>
+      <description>LSTM基本概念 长短期记忆模型（long-short term memory）是一种特殊的RNN模型，是为了解决RNN模型梯度弥散的问题而提出的；在传统的RNN中，训练算法使用的是BPTT，当时间比较长时，需要回传的残差会指数下降，导致网络权重更新缓慢，无法体现出RNN的长期记忆的效果，因</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>认识数据特征 on Daqi23333的杂货小记</title>
+    <link>https://wangsiqi777.github.io/tags/%E8%AE%A4%E8%AF%86%E6%95%B0%E6%8D%AE%E7%89%B9%E5%BE%81/</link>
+    <description>Recent content in 认识数据特征 on Daqi23333的杂货小记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 29 Apr 2020 21:49:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://wangsiqi777.github.io/tags/%E8%AE%A4%E8%AF%86%E6%95%B0%E6%8D%AE%E7%89%B9%E5%BE%81/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>数据挖掘-1-认识数据</title>
+      <link>https://wangsiqi777.github.io/post/datascience-1/</link>
+      <pubDate>Wed, 29 Apr 2020 21:49:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/datascience-1/</guid>
+      <description>1. Attribute Types 数据特征的类型 Nominal : 一些符号或事物的名称，又被看做是分类的(categorical)。这些值不必具有有意义的序。 Binary : 仅有两个状态。 一个二元属性是对称的，如果它的两种状态具有同等价值并且携带相同的权重；即，关于哪个结果应该用0或1编码并无偏好。 一个二元属性是非对称的，如果其状态</description>
+    </item>
+    
+  </channel>
+</rss>

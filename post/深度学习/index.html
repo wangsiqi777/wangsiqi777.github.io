@@ -1,0 +1,971 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>深度学习结课项目——基于BP神经网络的Fashion-MNIST十分类问题（matlab） | Daqi23333的杂货小记</title>
+    <meta property="og:title" content="深度学习结课项目——基于BP神经网络的Fashion-MNIST十分类问题（matlab） - Daqi23333的杂货小记">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-04-20T19:41:24&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-04-20T19:41:24&#43;08:00'>
+        
+    <meta name="Keywords" content="大型电子成长记录册">
+    <meta name="description" content="深度学习结课项目——基于BP神经网络的Fashion-MNIST十分类问题（matlab）">
+        
+    <meta name="author" content="Daqi23333">
+    <meta property="og:url" content="https://wangsiqi777.github.io/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+	<script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.5/sakura.js"></script>
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://wangsiqi777.github.io/">
+                        Daqi23333的杂货小记
+                    </a>
+                
+                <p class="description">Hi！这里是daqi的杂货日记，偶尔丧，日常鸡血，欢迎来找我玩~</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://wangsiqi777.github.io/">首页</a>
+                    
+                    <a  href="https://wangsiqi777.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://wangsiqi777.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1数据集介绍">1.数据集介绍</a></li>
+        <li><a href="#2-问题设计">2. 问题设计</a></li>
+        <li><a href="#3-数据准备">3. 数据准备</a></li>
+        <li><a href="#4-网络结构及训练参数设计">4. 网络结构及训练参数设计</a></li>
+        <li><a href="#5实验结果">5.实验结果</a></li>
+        <li><a href="#6-分析与结论">6. 分析与结论</a></li>
+        <li><a href="#7-实验代码">7. 实验代码</a></li>
+        <li><a href="#参考链接">参考链接</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">深度学习结课项目——基于BP神经网络的Fashion-MNIST十分类问题（matlab）</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年4月20日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='https://wangsiqi777.github.io/categories/'></a></span>
+            
+        </div>
+        
+        
+        
+        <div class="post-content">
+            <h3 id="1数据集介绍">1.数据集介绍</h3>
+<p>Fashion-MNIST数据集是由我们国家的一个大佬制作的，还发表了论文：Fashion-MNIST: a Novel Image Dataset for Benchmarking Machine Learning Algorithms
+paper 地址：https://arxiv.org/abs/1708.07747</p>
+<p>数据集下载地址：[https://github.com/zalandoresearch/fashion-mnist][https://github.com/zalandoresearch/fashion-mnist]</p>
+<p>Fashion-MNIST 数据集中的图片与衣着有关，其标签分别对应的衣着种类如表所示：</p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>代表的衣着种类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>短袖圆领T恤</td>
+</tr>
+<tr>
+<td>1</td>
+<td>裤子</td>
+</tr>
+<tr>
+<td>2</td>
+<td>套衫</td>
+</tr>
+<tr>
+<td>3</td>
+<td>连衣裙</td>
+</tr>
+<tr>
+<td>4</td>
+<td>外套</td>
+</tr>
+<tr>
+<td>5</td>
+<td>凉鞋</td>
+</tr>
+<tr>
+<td>6</td>
+<td>衬衫</td>
+</tr>
+<tr>
+<td>7</td>
+<td>运动鞋</td>
+</tr>
+<tr>
+<td>8</td>
+<td>包</td>
+</tr>
+<tr>
+<td>9</td>
+<td>短靴</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/1.webp" alt=""></p>
+<pre><code>其中值得我们关注的是数据制作的方法：
+最原始图片是背景为浅灰色，分辨率为762x1000 的JPEG图片。然后经过resampled 到 51x73 的彩色图片。然后依次经过以下7个步骤，最终得到28x28的灰度图。
+1. JPEG –&gt; PNG
+2. 裁剪背景
+3. 按比例： 将图像缩放，也就是将一个维度缩放至28
+4. 锐化
+5. 再扩充至28*28，再把object调整至图片中央
+6. 将负的像素点剔除
+7. 转化成28x28的灰度图
+</code></pre><p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/2.png" alt="img"></p>
+<p>本次实验的分类任务就是通过训练集训练后，对于给定一个样本，判断其所属的类别，对于训练集和测试集计算出整体的分类准确率，两者的准确率都应尽可能高。</p>
+<h3 id="2-问题设计">2. 问题设计</h3>
+<p>BP算法是一种有监督的学习方法。BP 神经网络的重点是采用误差反向传播算法，不断更新网络权值。整个学习过程分为正向传播与误差的反向传播两个阶段。网络权值的调整是通过最小化网络输出与样本输出之间的误差平方和而训练出来的。</p>
+<p>正向传播的过程中，网络的权值固定不变，每一层神经元的状态只影响下一层神经元的状态,这主要是由该层的权值与神经元相乘得到的结果形成下一层神经元的值，该过程在实现部分被定义为 fc 函</p>
+<p>数。</p>
+<p>反向传播过程中，未能满足要求的误差信号由输出端开始，逐层向前传播，并将误差分摊给各层的所有神经元，从而动态地调整各层神经元的连接权。这一过程在实现部分被定义为 bc 函数。</p>
+<p>通过周而复始的正向传播与反向调节，神经元之间的权值不断被修正，当误差收敛时，停止学习。</p>
+<p>具体的实现代码见第七部分。</p>
+<h3 id="3-数据准备">3. 数据准备</h3>
+<p>在进行网络训练之前，需要对 Fashion-MNIST 数据集进行预处理。</p>
+<ul>
+<li>
+<p>train-images-idx3-ubyte.gz 训练集：存储了60000 个28x28 的灰度图样本，共有10 类</p>
+</li>
+<li>
+<p>train-labels-idx1-ubyte.gz 中存储的是训练集的标签</p>
+</li>
+<li>
+<p>t10k-images-idx3-ubyte.gz 测试集：存储了 10000 个测试样本</p>
+</li>
+<li>
+<p>t10k-images-idx1-ubyte.gz 中存储的是测试集的标签。</p>
+</li>
+</ul>
+<p>Step1：对于灰度图样本，需要将 28*28 的样本转化为一个 784 维的列向量。</p>
+<p>Step2：对于每一个样本，均需要进行归一化处理。采用min-max标准化方法，在实现部分对 784维的列向量中的每一个数值都除以255：(x - 0)/255。</p>
+<p>Step3：对于标签，所给的标签以十进制 0-9 表示，采用one-hot编码，将其转化为一个 10×1 维的向量，每个样本中的特征位为 1,其余为 0。</p>
+<h3 id="4-网络结构及训练参数设计">4. 网络结构及训练参数设计</h3>
+<p>本实验采用5层BP网络设计，包括一个输入层，三个隐藏层，一个输出层，提取特征为28x28，每个特征样本数为60000，输入为28x28x60000；</p>
+<p>经实验，当隐藏层神经元个数太大时，虽然BP网络越精确, 但会使收敛速度较慢，当较少时，则训练不够充分，准确率较低。每层神经元个数如下表所示：</p>
+<p>表1：网络结构设计</p>
+<table>
+<thead>
+<tr>
+<th>层数</th>
+<th>神经元个数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输入层（第一层）</td>
+<td>784</td>
+</tr>
+<tr>
+<td>第二层</td>
+<td>256</td>
+</tr>
+<tr>
+<td>第三层</td>
+<td>128</td>
+</tr>
+<tr>
+<td>第四层</td>
+<td>64</td>
+</tr>
+<tr>
+<td>输出层（第五层）</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>在网络训练的部分，使用梯度下降更新权值的方法。在训练时,首先将训练集打乱,每次取 1000 个样本及其标签进行训 练,如此循环使用整个测试集进行训练,先进行并将最终的权值保存。BP网络相关参数/函数设计如下表所示：</p>
+<p>表2：网络相关参数设计</p>
+<table>
+<thead>
+<tr>
+<th>参数名/函数名</th>
+<th>取值/表达式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>max_epochs</td>
+<td>200</td>
+</tr>
+<tr>
+<td>mini_batchSize</td>
+<td>100</td>
+</tr>
+<tr>
+<td>learningRate</td>
+<td>0.005</td>
+</tr>
+<tr>
+<td>TrainData_size</td>
+<td>28x28x60000</td>
+</tr>
+<tr>
+<td>TrainLabels_size</td>
+<td>10x60000</td>
+</tr>
+<tr>
+<td>TestData_size</td>
+<td>28x28x10000</td>
+</tr>
+<tr>
+<td>TestLabels_size</td>
+<td>10x10000</td>
+</tr>
+<tr>
+<td>J(Cost function)</td>
+<td><img src="" alt="img"></td>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td><img src="" alt="img"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="5实验结果">5.实验结果</h3>
+<p>本实验采用Matlab进行编程，训练BP神经网络。经计算，训练集训练误差收敛情况，如图3所示；训练集准确率为94.065%，验证集准确率为87.73%，如图5所示。</p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/wps3.jpg" alt="img"></p>
+<p>图3：训练集性能函数</p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/wps4.jpg" alt="img"></p>
+<p>图4：训练集准确率</p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/wps5.jpg" alt="img"></p>
+<h3 id="6-分析与结论">6. 分析与结论</h3>
+<p><strong>BP神经网络的优点：</strong></p>
+<p>基于十分类图片任务的特性，本实验采用在图片分类任务上具有优良性能的BP神经网络。并在Fashion-MNIST数据集上对模型进行了训练和验证。总体来说，识别效果较好。</p>
+<p>网络实质上实现了一个从输入到输出的映射功能，而数学理论已证明它具有实现任何复杂非线性映射的功能。这使得它特别适合于求解内部机制复杂的问题。</p>
+<p>网络能通过学习带正确答案的实例集自动提取“合理的”求解规则，即具有自学习能力。</p>
+<p>网络具有一定的推广、概括能力。</p>
+<p><strong>应用领域：</strong></p>
+<p>常见的有图像分类，自动驾驶，自然语言处理等。</p>
+<p><strong>BP神经网络的缺点：</strong></p>
+<p>对初始权重非常敏感，极易收敛于局部极小。</p>
+<p>容易 Over Fitting 和 Over Training。</p>
+<p>如何选择隐藏层数和神经元个数没有一个科学的指导流程，有时候感觉就是靠猜。</p>
+<p><strong>小结</strong></p>
+<p>本实验还存在很大的提升空间，因期末时间较紧没有继续尝试。如：从数学角度看，BP算法是一种梯度最速下降法，这就可能出现局部极小的问题。当出现局部极小时，从表面上看误差符合要求，但所得到的解并不一定是问题的真正解。针对此，国内外不少学者已提出了许多改进算法，如：可变学习速度的反向传播算法、学习速率的自适应调节等。</p>
+<h3 id="7-实验代码">7. 实验代码</h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="color:#998;font-style:italic">%%%%%%%%%%%%%%%%%main.m%%%%%%%%%%%%</span>
+<span style="color:#998;font-style:italic">%清理工作台</span>
+clear all;
+clc;
+ 
+<span style="color:#998;font-style:italic">%% Step 1: Data Preparation  </span>
+<span style="color:#998;font-style:italic">% loading dataset</span>
+<span style="color:#998;font-style:italic">% trainData: a matrix with size of 28x28x60000   </span>
+<span style="color:#998;font-style:italic">% trainLabels: a matrix with size of 10x60000</span>
+<span style="color:#998;font-style:italic">% testData: a matrix with size of 28x28x10000</span>
+<span style="color:#998;font-style:italic">% testLabels: a matrix with size of 10x10000</span>
+ 
+trainData = loadMNISTImages(<span style="color:#d14">&#39;train-images.idx3-ubyte&#39;</span>);
+labels = loadMNISTLabels(<span style="color:#d14">&#39;train-labels.idx1-ubyte&#39;</span>);
+    
+<span style="color:#998;font-style:italic">% Transform the labels to correct target values.</span>
+trainLabels = <span style="color:#099">0.</span><span style="color:#000;font-weight:bold">*</span><span style="color:#0086b3">ones</span>(<span style="color:#099">10</span>, <span style="color:#0086b3">size</span>(labels, <span style="color:#099">1</span>));
+    <span style="color:#000;font-weight:bold">for</span> n = <span style="color:#099">1</span>: <span style="color:#0086b3">size</span>(labels, <span style="color:#099">1</span>)
+        trainLabels(labels(n) <span style="color:#000;font-weight:bold">+</span> <span style="color:#099">1</span>, n) = <span style="color:#099">1</span>;
+    <span style="color:#000;font-weight:bold">end</span>;
+    
+testData = loadMNISTImages(<span style="color:#d14">&#39;t10k-images.idx3-ubyte&#39;</span>);
+t_labels = loadMNISTLabels(<span style="color:#d14">&#39;t10k-labels.idx1-ubyte&#39;</span>);
+ 
+<span style="color:#998;font-style:italic">% Transform the labels to correct target values.</span>
+testLabels = <span style="color:#099">0.</span><span style="color:#000;font-weight:bold">*</span><span style="color:#0086b3">ones</span>(<span style="color:#099">10</span>, <span style="color:#0086b3">size</span>(t_labels, <span style="color:#099">1</span>));
+    <span style="color:#000;font-weight:bold">for</span> n = <span style="color:#099">1</span>: <span style="color:#0086b3">size</span>(t_labels, <span style="color:#099">1</span>)
+        testLabels(t_labels(n) <span style="color:#000;font-weight:bold">+</span> <span style="color:#099">1</span>, n) = <span style="color:#099">1</span>;
+    <span style="color:#000;font-weight:bold">end</span>;
+ 
+train_size = <span style="color:#099">60000</span>; <span style="color:#998;font-style:italic">% number of training samples</span>
+<span style="color:#998;font-style:italic">% input in the 1st layer </span>
+X_train = <span style="color:#0086b3">reshape</span>(trainData, <span style="color:#099">784</span>, train_size); 
+test_size = <span style="color:#099">10000</span>; <span style="color:#998;font-style:italic">% number of testing samples</span>
+<span style="color:#998;font-style:italic">% external input in the 1st layer </span>
+X_test = <span style="color:#0086b3">reshape</span>(testData, <span style="color:#099">784</span>, test_size); 
+ 
+<span style="color:#998;font-style:italic">%% Step 2: Design Network Architecture</span>
+<span style="color:#998;font-style:italic">% define number of layers</span>
+L = <span style="color:#099">5</span>; 
+<span style="color:#998;font-style:italic">% define number of neurons in each layer </span>
+layer_size = [<span style="color:#099">784</span> <span style="color:#998;font-style:italic">% number of neurons in 1st layer</span>
+              <span style="color:#099">256</span> <span style="color:#998;font-style:italic">% number of neurons in 2nd layer</span>
+              <span style="color:#099">128</span> <span style="color:#998;font-style:italic">% number of neurons in 3rd layer</span>
+              <span style="color:#099">64</span>  <span style="color:#998;font-style:italic">% number of neurons in 4th layer</span>
+              <span style="color:#099">10</span>];<span style="color:#998;font-style:italic">% number of neurons in 5th layer</span>
+          
+<span style="color:#998;font-style:italic">%% Step 3: Initial Parameters</span>
+<span style="color:#998;font-style:italic">% initialize weights in each layer with Gaussian distribution</span>
+<span style="color:#000;font-weight:bold">for</span> l = <span style="color:#099">1</span>:L<span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span>
+    w{l} = <span style="color:#099">0.1</span> <span style="color:#000;font-weight:bold">*</span> <span style="color:#0086b3">randn</span>(layer_size(l<span style="color:#000;font-weight:bold">+</span><span style="color:#099">1</span>,<span style="color:#099">1</span>), sum(layer_size(l,:)));
+<span style="color:#000;font-weight:bold">end</span>
+ 
+alpha = <span style="color:#099">0.005</span>; <span style="color:#998;font-style:italic">% initialize learning rate </span>
+ 
+<span style="color:#998;font-style:italic">%% Step 4: Define Cost Function</span>
+<span style="color:#998;font-style:italic">% cost function is defined in cost.m</span>
+ 
+<span style="color:#998;font-style:italic">%% Step 5: Define Evaluation Index</span>
+<span style="color:#998;font-style:italic">% accuracy defined in accuracy.m</span>
+ 
+<span style="color:#998;font-style:italic">%% Step 6: Train the Network</span>
+J = []; <span style="color:#998;font-style:italic">% array to store cost of each mini batch</span>
+Acc = []; <span style="color:#998;font-style:italic">% array to store accuracy of each mini batch</span>
+max_epoch = <span style="color:#099">200</span>; <span style="color:#998;font-style:italic">% number of training epoch</span>
+mini_batch = <span style="color:#099">100</span>; <span style="color:#998;font-style:italic">% number of sample of each mini batch</span>
+ 
+figure <span style="color:#998;font-style:italic">% plot the cost</span>
+<span style="color:#000;font-weight:bold">for</span> iter=<span style="color:#099">1</span>:max_epoch
+   <span style="color:#998;font-style:italic">% randomly permute the indexes of samples in training set</span>
+idxs = randperm(train_size); 
+<span style="color:#998;font-style:italic">% for each mini-batch</span>
+<span style="color:#000;font-weight:bold">for</span> k = <span style="color:#099">1</span>:<span style="color:#0086b3">ceil</span>(train_size<span style="color:#000;font-weight:bold">/</span>mini_batch)
+    <span style="color:#998;font-style:italic">% prepare internal inputs in 1st layer denoted by a{1}</span>
+    
+    start_idx = (k<span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span>)<span style="color:#000;font-weight:bold">*</span>mini_batch<span style="color:#000;font-weight:bold">+</span><span style="color:#099">1</span>;          <span style="color:#998;font-style:italic">% start index of kth mini-batch</span>
+    end_idx = min(k<span style="color:#000;font-weight:bold">*</span>mini_batch, train_size); <span style="color:#998;font-style:italic">% end index of kth mini-batch</span>
+    a{<span style="color:#099">1</span>} = X_train(:,idxs(start_idx:end_idx));
+    <span style="color:#998;font-style:italic">% prepare labels</span>
+    y = trainLabels(:, idxs(start_idx:end_idx));
+    
+        <span style="color:#998;font-style:italic">% forward computation</span>
+        <span style="color:#000;font-weight:bold">for</span> l=<span style="color:#099">1</span>:L<span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span>
+            [a{l<span style="color:#000;font-weight:bold">+</span><span style="color:#099">1</span>}, z{l<span style="color:#000;font-weight:bold">+</span><span style="color:#099">1</span>}] = fc(w{l}, a{l});
+        <span style="color:#000;font-weight:bold">end</span>
+ 
+        <span style="color:#998;font-style:italic">% Compute delta of last layer</span>
+        delta{L} = (a{L} <span style="color:#000;font-weight:bold">-</span> y)<span style="color:#000;font-weight:bold">.*</span> a{L} <span style="color:#000;font-weight:bold">.*</span>(<span style="color:#099">1</span><span style="color:#000;font-weight:bold">-</span>a{L}); <span style="color:#998;font-style:italic">%delta{L}={partial J}/{partial z^L} </span>
+ 
+        <span style="color:#998;font-style:italic">% backward computation</span>
+        <span style="color:#000;font-weight:bold">for</span> l=L<span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span>:<span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span>:<span style="color:#099">2</span>
+            delta{l} = bc(w{l}, z{l}, delta{l<span style="color:#000;font-weight:bold">+</span><span style="color:#099">1</span>});
+        <span style="color:#000;font-weight:bold">end</span>
+ 
+        <span style="color:#998;font-style:italic">% update weight </span>
+        <span style="color:#000;font-weight:bold">for</span> l=<span style="color:#099">1</span>:L<span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span>
+            <span style="color:#998;font-style:italic">% compute the gradient</span>
+            grad_w = delta{l<span style="color:#000;font-weight:bold">+</span><span style="color:#099">1</span>} <span style="color:#000;font-weight:bold">*</span> a{l}<span style="color:#d14">&#39;; 
+</span><span style="color:#d14">            w{l} = w{l} - alpha*grad_w;
+</span><span style="color:#d14">        end 
+</span><span style="color:#d14"> 
+</span><span style="color:#d14">        % training cost on training batch
+</span><span style="color:#d14">        J = [J 1/mini_batch*sum(cost(a{L}, y))];
+</span><span style="color:#d14">        Acc =[Acc accuracy(a{L}, y)]; 
+</span><span style="color:#d14">        % plot training error 
+</span><span style="color:#d14">        plot(J);
+</span><span style="color:#d14">        pause(0.000001);
+</span><span style="color:#d14">    end
+</span><span style="color:#d14">end 
+</span><span style="color:#d14">% end training
+</span><span style="color:#d14">% plot accuracy
+</span><span style="color:#d14">figure
+</span><span style="color:#d14">plot(Acc);
+</span><span style="color:#d14"> 
+</span><span style="color:#d14">%% Step 7: Test the Network
+</span><span style="color:#d14">%test on training set
+</span><span style="color:#d14">a{1} = X_train;
+</span><span style="color:#d14">for l = 1:L-1
+</span><span style="color:#d14">  a{l+1} = fc(w{l}, a{l});
+</span><span style="color:#d14">end
+</span><span style="color:#d14">train_acc = accuracy(a{L}, trainLabels);
+</span><span style="color:#d14">fprintf(&#39;</span>Accuracy on training dataset is <span style="color:#998;font-style:italic">%f%%\n&#39;, train_acc*100);</span>
+ 
+<span style="color:#998;font-style:italic">%test on testing set</span>
+a{<span style="color:#099">1</span>} = X_test;
+<span style="color:#000;font-weight:bold">for</span> l = <span style="color:#099">1</span>:L<span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span>
+   a{l<span style="color:#000;font-weight:bold">+</span><span style="color:#099">1</span>} = fc(w{l}, a{l});
+<span style="color:#000;font-weight:bold">end</span>
+test_acc = accuracy(a{L}, testLabels);
+fprintf(<span style="color:#d14">&#39;Accuracy on testing dataset is %f%%\n&#39;</span>, test_acc<span style="color:#000;font-weight:bold">*</span><span style="color:#099">100</span>);
+ 
+<span style="color:#998;font-style:italic">%% Step 8: Store the Network Parameters</span>
+save model.mat w layer_size
+
+<span style="color:#998;font-style:italic">%%%%%%%%%%%%%%%loadMNISTLabels.m%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span style="color:#000;font-weight:bold">function</span><span style="color:#bbb"> </span>labels =<span style="color:#bbb"> </span><span style="color:#900;font-weight:bold">loadMNISTLabels</span>(filename)<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#998;font-style:italic">%loadMNISTLabels returns a [number of MNIST images]x1 matrix containing</span>
+<span style="color:#998;font-style:italic">%the labels for the MNIST images</span>
+fp = fopen(filename, <span style="color:#d14">&#39;rb&#39;</span>);
+assert(fp <span style="color:#000;font-weight:bold">~=</span> <span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span>, [<span style="color:#d14">&#39;Could not open &#39;</span>, filename, <span style="color:#d14">&#39;&#39;</span>]);
+<span style="color:#0086b3">magic</span> = fread(fp, <span style="color:#099">1</span>, <span style="color:#d14">&#39;int32&#39;</span>, <span style="color:#099">0</span>, <span style="color:#d14">&#39;ieee-be&#39;</span>);
+assert(<span style="color:#0086b3">magic</span> <span style="color:#000;font-weight:bold">==</span> <span style="color:#099">2049</span>, [<span style="color:#d14">&#39;Bad magic number in &#39;</span>, filename, <span style="color:#d14">&#39;&#39;</span>]);
+numLabels = fread(fp, <span style="color:#099">1</span>, <span style="color:#d14">&#39;int32&#39;</span>, <span style="color:#099">0</span>, <span style="color:#d14">&#39;ieee-be&#39;</span>);
+labels = fread(fp, <span style="color:#0086b3">inf</span>, <span style="color:#d14">&#39;unsigned char&#39;</span>);
+assert(<span style="color:#0086b3">size</span>(labels,<span style="color:#099">1</span>) <span style="color:#000;font-weight:bold">==</span> numLabels, <span style="color:#d14">&#39;Mismatch in label count&#39;</span>);
+ 
+fclose(fp); 
+End
+
+<span style="color:#998;font-style:italic">%%%%%%%%%%%%%%%%%%%%%%loadMNISTImages.m%%%%%%%%%%%%%%%%%%%%</span>
+<span style="color:#000;font-weight:bold">function</span><span style="color:#bbb"> </span>images =<span style="color:#bbb"> </span><span style="color:#900;font-weight:bold">loadMNISTImages</span>(filename)<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#998;font-style:italic">%loadMNISTImages returns a 28x28x[number of MNIST images] matrix containing</span>
+<span style="color:#998;font-style:italic">%the raw MNIST images</span>
+ 
+fp = fopen(filename, <span style="color:#d14">&#39;rb&#39;</span>);
+assert(fp <span style="color:#000;font-weight:bold">~=</span> <span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span>, [<span style="color:#d14">&#39;Could not open &#39;</span>, filename, <span style="color:#d14">&#39;&#39;</span>]);
+<span style="color:#0086b3">magic</span> = fread(fp, <span style="color:#099">1</span>, <span style="color:#d14">&#39;int32&#39;</span>, <span style="color:#099">0</span>, <span style="color:#d14">&#39;ieee-be&#39;</span>);
+assert(<span style="color:#0086b3">magic</span> <span style="color:#000;font-weight:bold">==</span> <span style="color:#099">2051</span>, [<span style="color:#d14">&#39;Bad magic number in &#39;</span>, filename, <span style="color:#d14">&#39;&#39;</span>]);
+ 
+numImages = fread(fp, <span style="color:#099">1</span>, <span style="color:#d14">&#39;int32&#39;</span>, <span style="color:#099">0</span>, <span style="color:#d14">&#39;ieee-be&#39;</span>);
+numRows = fread(fp, <span style="color:#099">1</span>, <span style="color:#d14">&#39;int32&#39;</span>, <span style="color:#099">0</span>, <span style="color:#d14">&#39;ieee-be&#39;</span>);
+numCols = fread(fp, <span style="color:#099">1</span>, <span style="color:#d14">&#39;int32&#39;</span>, <span style="color:#099">0</span>, <span style="color:#d14">&#39;ieee-be&#39;</span>);
+ 
+images = fread(fp, <span style="color:#0086b3">inf</span>, <span style="color:#d14">&#39;unsigned char&#39;</span>);
+images = <span style="color:#0086b3">reshape</span>(images, numCols, numRows, numImages);
+images = <span style="color:#0086b3">permute</span>(images,[<span style="color:#099">2</span> <span style="color:#099">1</span> <span style="color:#099">3</span>]);
+ 
+fclose(fp);
+<span style="color:#998;font-style:italic">% Reshape to #pixels x #examples</span>
+images = <span style="color:#0086b3">reshape</span>(images, <span style="color:#0086b3">size</span>(images, <span style="color:#099">1</span>) <span style="color:#000;font-weight:bold">*</span> <span style="color:#0086b3">size</span>(images, <span style="color:#099">2</span>), <span style="color:#0086b3">size</span>(images, <span style="color:#099">3</span>));
+<span style="color:#998;font-style:italic">% Convert to double and rescale to [0,1]</span>
+images = double(images) <span style="color:#000;font-weight:bold">/</span> <span style="color:#099">255</span>;
+End
+
+<span style="color:#998;font-style:italic">%%%%%%%%%%%%%%%%%%%%%%%%fc.m%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span style="color:#998;font-style:italic">% This is forward computation function</span>
+<span style="color:#000;font-weight:bold">function</span><span style="color:#bbb"> </span>[a_next, z_next] =<span style="color:#bbb"> </span><span style="color:#900;font-weight:bold">fc</span>(w, a)<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#998;font-style:italic">% define the activation function</span>
+    f = @(s) <span style="color:#099">1</span> <span style="color:#000;font-weight:bold">./</span> (<span style="color:#099">1</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#0086b3">exp</span>(<span style="color:#000;font-weight:bold">-</span>s)); 
+  
+    <span style="color:#998;font-style:italic">% forward computing </span>
+    z_next = w <span style="color:#000;font-weight:bold">*</span> a;
+    a_next = f(z_next);
+End
+
+<span style="color:#099">5</span>)bc.m:
+<span style="color:#998;font-style:italic">% This is backward computation function</span>
+<span style="color:#000;font-weight:bold">function</span><span style="color:#bbb"> </span>delta =<span style="color:#bbb"> </span><span style="color:#900;font-weight:bold">bc</span>(w, z, delta_next)<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#998;font-style:italic">% activation function</span>
+    f = @(s) <span style="color:#099">1</span> <span style="color:#000;font-weight:bold">./</span> (<span style="color:#099">1</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#0086b3">exp</span>(<span style="color:#000;font-weight:bold">-</span>s)); 
+    
+    <span style="color:#998;font-style:italic">% derivative of activation  function</span>
+    df = @(s) f(s) <span style="color:#000;font-weight:bold">.*</span> (<span style="color:#099">1</span> <span style="color:#000;font-weight:bold">-</span> f(s)); 
+ 
+    <span style="color:#998;font-style:italic">% backward computing</span>
+    delta = (w<span style="color:#000;font-weight:bold">&#39;</span> <span style="color:#000;font-weight:bold">*</span> delta_next) <span style="color:#000;font-weight:bold">.*</span> df(z); 
+End
+
+<span style="color:#998;font-style:italic">%%%%%%%%%%%%%%%%%%%%%%%%%%cost.m:%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span style="color:#998;font-style:italic">%% Step 4: Define Cost Function</span>
+<span style="color:#000;font-weight:bold">function</span><span style="color:#bbb"> </span>[J] =<span style="color:#bbb"> </span><span style="color:#900;font-weight:bold">cost</span>(a, y)<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>J = <span style="color:#099">1</span><span style="color:#000;font-weight:bold">/</span><span style="color:#099">2</span> <span style="color:#000;font-weight:bold">*</span> sum((a <span style="color:#000;font-weight:bold">-</span> y)<span style="color:#000;font-weight:bold">.^</span><span style="color:#099">2</span>);
+End
+
+<span style="color:#099">7</span>)accuracy.m:
+<span style="color:#998;font-style:italic">% Define Evaluation Index</span>
+<span style="color:#000;font-weight:bold">function</span><span style="color:#bbb"> </span>[ acc ] =<span style="color:#bbb"> </span><span style="color:#900;font-weight:bold">accuracy</span>( a, y )<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>mini_batch = <span style="color:#0086b3">size</span>(a, <span style="color:#099">2</span>);
+    [<span style="color:#000;font-weight:bold">~</span>,idx_a] = max(a);
+    [<span style="color:#000;font-weight:bold">~</span>,idx_y] = max(y);
+    acc = sum(idx_a<span style="color:#000;font-weight:bold">==</span>idx_y) <span style="color:#000;font-weight:bold">/</span> mini_batch;
+End
+</code></pre></div><h3 id="参考链接">参考链接</h3>
+<p>[fashion-mnist简介和使用及下载][https://blog.csdn.net/qq_36387683/article/details/80612627?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase]</p>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://wangsiqi777.github.io/">Daqi23333</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://wangsiqi777.github.io/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">https://wangsiqi777.github.io/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0-1/">表达学习-1</a></li>
+        
+        <li><a href="/post/java-%E5%AE%9E%E6%88%98%E4%B9%8B%E8%B7%AF/">java 实战之路</a></li>
+        
+        <li><a href="/post/%E5%A6%82%E4%BD%95%E8%AF%BB%E8%AE%BA%E6%96%87/">如何读论文</a></li>
+        
+        <li><a href="/post/MARKDOWN-%E6%A0%BC%E5%BC%8F%E7%BB%83%E4%B9%A0%E6%89%8B%E6%89%93%E8%AE%B0%E5%BF%86/">MARKDOWN 格式练习手打记忆</a></li>
+        
+        <li><a href="/post/Python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0-03/">Python学习日记-03-列表/字典/集合</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='https://wangsiqi777.github.io/tags/'></a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "http-wangsiqi777-github-io-1" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "wangsiqi777/blog_comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://wangsiqi777.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://wangsiqi777.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-10/" title="实训日记-10-SpringBoot4">实训日记-10-SpringBoot4</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-09/" title="实训日记-09-SpringBoot3">实训日记-09-SpringBoot3</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-2/" title="数据结构-2">数据结构-2</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/" title="数据结构-1">数据结构-1</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-08/" title="实训日记-08-SpringBoot2">实训日记-08-SpringBoot2</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-07-SpringBoot%E5%B0%8F%E7%BB%937.4/" title="实训日记-07-SpringBoot1">实训日记-07-SpringBoot1</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-06-%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%8E%A5%E6%89%8B%E5%88%AB%E4%BA%BA%E7%9A%84%E9%A1%B9%E7%9B%AE/" title="实训日记-06-怎样处理别人的开源项目">实训日记-06-怎样处理别人的开源项目</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-05-6.28/" title="实训日记-05-数据库操作">实训日记-05-数据库操作</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-04-%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" title="实训日记-04-前端基础">实训日记-04-前端基础</a>
+    </li>
+    
+    <li>
+        <a href="https://wangsiqi777.github.io/post/%E6%90%AD%E5%BB%BAhugo%E5%B9%B3%E5%8F%B0%E7%BD%91%E7%AB%99%E5%B0%8F%E7%99%BD%E6%8C%87%E5%8D%97/" title="搭建hugo平台网站（小白指南）">搭建hugo平台网站（小白指南）</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li><a href="https://wangsiqi777.github.io/categories/Python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/">Python学习日记 (4)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/java%E5%AE%9E%E6%88%98%E4%B9%8B%E8%B7%AF/">java实战之路 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建 (2)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E5%A4%A7%E5%88%9B/">大创 (5)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0/">实训日记 (10)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E6%8D%A3%E9%BC%93%E7%82%B9%E5%95%A5/">捣鼓点啥 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/">数据可视化 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/">数据挖掘 (8)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构 (2)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E6%9C%BA%E8%AF%95/">机试 (1)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0/">表达学习 (3)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB/">论文研读 (2)</a></li>
+    
+    <li><a href="https://wangsiqi777.github.io/categories/%E9%A2%84%E5%A4%87%E7%A0%94%E7%A9%B6%E7%94%9F/">预备研究生 (5)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://wangsiqi777.github.io/tags/Ajax/">Ajax</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/BP/">BP</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/Bp_Rnn_LSTM/">Bp_Rnn_LSTM</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/Data-Preprocessing/">Data Preprocessing</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/GSP/">GSP</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/Jquery/">Jquery</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/Js/">Js</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/LSTM/">LSTM</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/MP/">MP</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/Mitacs/">Mitacs</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/OMP/">OMP</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/Pattern-Mining/">Pattern Mining</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/PrefixSpan/">PrefixSpan</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/SPADE/">SPADE</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/SpringBoot/">SpringBoot</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/XAMPP/">XAMPP</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/css/">css</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/hugo/">hugo</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/java/">java</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/mybatis/">mybatis</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/pandas/">pandas</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/turtle/">turtle</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/weka/">weka</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/">人脸识别</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E5%88%97%E8%A1%A8/">列表</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E5%AD%97%E5%85%B8/">字典</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E8%A7%84%E6%95%B4/">字符串数据规整</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E5%AE%9E%E6%88%98/">实战</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86%E9%A2%84%E5%A4%84%E7%90%86/">数据集预处理</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E6%96%B0%E9%97%BB%E5%8F%AF%E8%A7%86%E5%8C%96/">新闻可视化</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/">时间管理</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E6%9C%BA%E8%AF%95/">机试</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E6%A0%91%E5%8F%AF%E8%A7%86%E5%8C%96/">树可视化</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E6%A2%AF%E5%BA%A6%E9%97%AE%E9%A2%98/">梯度问题</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E8%AE%A4%E8%AF%86%E6%95%B0%E6%8D%AE%E7%89%B9%E5%BE%81/">认识数据特征</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E8%AF%BB%E8%AE%BA%E6%96%87/">读论文</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E8%BF%90%E5%8A%A8%E5%8F%AF%E8%A7%86%E5%8C%96/">运动可视化</a>
+    
+    <a href="https://wangsiqi777.github.io/tags/%E9%9B%86%E5%90%88/">集合</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://wangsiqi777.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="https://wangsiqi777.github.io/">Daqi23333的杂货小记 By Daqi23333</a>.
+        
+    </div>
+</footer>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.2.8/raphael.min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/flowchart/1.12.2/flowchart.min.js" crossorigin="anonymous"></script>
+        <script>(function () {
+                if (!window.flowchart) return;
+                const blocks = document.querySelectorAll('pre code.language-flowchart, pre code.language-flow');
+                for (let i = 0; i < blocks.length; i++) {
+                    const block = blocks[i];
+                    const rootElement = block.parentNode;
+                    const container = document.createElement('div');
+                    const id = `js-flowchart-diagrams-${i}`;
+                    container.id = id;
+                    container.className = 'align-center';
+                    container.setAttribute("style", "overFlow-x:auto");
+                    rootElement.parentNode.replaceChild(container, rootElement);
+                    const diagram = flowchart.parse(block.childNodes[0].nodeValue);
+                    diagram.drawSVG(id, window.flowchartDiagramsOptions ? window.flowchartDiagramsOptions : {});
+                }
+            })();
+        </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js" crossorigin="anonymous"></script>
+        <script>(function () {
+            if (!window.Diagram) return;
+            const blocks = document.querySelectorAll('pre code.language-sequence');
+            for (let i = 0; i < blocks.length; i++) {
+                const block = blocks[i];
+                
+                const rootElement = block.parentNode;
+                const container = document.createElement('div');
+                const id = `js-sequence-diag-${i}`;
+                container.id = id;
+                container.className = 'align-center';
+                container.setAttribute("style", "overFlow-x:auto");
+                rootElement.parentNode.replaceChild(container, rootElement);
+
+                const diagram = Diagram.parse(block.childNodes[0].nodeValue);
+                diagram.drawSVG(id, window.sequenceDiagramsOptions
+                    ? window.sequenceDiagramsOptions
+                    : { theme: 'simple' });
+            }
+        })();
+        </script><script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-161949903-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+    <script src='/js/clicklove.js'></script>
+
+    <script src='/js/hexo_resize_image.js'></script>
+
+</body>
+
+</html>

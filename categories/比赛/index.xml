@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>比赛 on Daqi23333的杂货小记</title>
+    <link>https://wangsiqi777.github.io/categories/%E6%AF%94%E8%B5%9B/</link>
+    <description>Recent content in 比赛 on Daqi23333的杂货小记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 20 Apr 2020 19:42:57 +0800</lastBuildDate>
+    
+	<atom:link href="https://wangsiqi777.github.io/categories/%E6%AF%94%E8%B5%9B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>智荟杯——票据手写体识别OCR</title>
+      <link>https://wangsiqi777.github.io/post/%E6%99%BA%E8%8D%9F%E6%9D%AF%E7%A5%A8%E6%8D%AEOCR/</link>
+      <pubDate>Mon, 20 Apr 2020 19:42:57 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E6%99%BA%E8%8D%9F%E6%9D%AF%E7%A5%A8%E6%8D%AEOCR/</guid>
+      <description>这本月初我和另外一位同学一起参加了算法赛道的比赛， 总历时四个星期。虽然最终没能提交满意的答卷，但也积累了 初次参加人工智能方向比赛的宝贵经验，总结如下： **赛题要求：**一是检测出所有可能涵盖印刷体或手写体文字的文本框；二是识别印刷体或手写体文本框中的文字内容。难点包括：印刷体的打</description>
+    </item>
+    
+  </channel>
+</rss>
