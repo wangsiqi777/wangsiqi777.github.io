@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>css on Daqi23333的杂货小记</title>
+    <link>https://wangsiqi777.github.io/tags/css/</link>
+    <description>Recent content in css on Daqi23333的杂货小记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 18 Jun 2020 21:49:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://wangsiqi777.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>实训日记-04-前端基础</title>
+      <link>https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-04-%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/</link>
+      <pubDate>Thu, 18 Jun 2020 21:49:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-04-%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/</guid>
+      <description>基本技术 HTML（内容）：超级文本标记语言，使用成对的标记标签，如：&amp;lt; title&amp;gt;&amp;lt;\title&amp;gt; CSS（美观）：层叠样式表，解决内容和表现分离的问题 href JavaScript（赋予动作）：连接前台和后台服务器的桥梁 Jq（JS升级） IDEA快捷方式，写标签名+Tab键补全 &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 一、CSS 1.内联c</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>论文研读 on Daqi23333的杂货小记</title>
+    <link>https://wangsiqi777.github.io/categories/%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB/</link>
+    <description>Recent content in 论文研读 on Daqi23333的杂货小记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 14 May 2020 11:31:12 +0800</lastBuildDate>
+    
+	<atom:link href="https://wangsiqi777.github.io/categories/%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GoTree: A Grammar of Tree Visualizations</title>
+      <link>https://wangsiqi777.github.io/post/%E6%A0%91%E5%8F%AF%E8%A7%86%E5%8C%96/</link>
+      <pubDate>Thu, 14 May 2020 11:31:12 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E6%A0%91%E5%8F%AF%E8%A7%86%E5%8C%96/</guid>
+      <description>前言 这篇文章来自于北大袁晓汝老师团队发表在发表于ACM CHI 2020的成果。在AI大热的背景下，单纯以问题研制可视化系统似乎变得不太受宠。可以看到袁晓汝老师将目光由定制可视化系统转而投向了帮助用户实现半自动化构建实用视图。这确实是一个很好的思路。其次，本篇文章中对于树结构的递归解构也</description>
+    </item>
+    
+    <item>
+      <title>State of the Art of Sports Data Visualization</title>
+      <link>https://wangsiqi777.github.io/post/%E8%BF%90%E5%8A%A8%E5%8F%AF%E8%A7%86%E5%8C%96/</link>
+      <pubDate>Wed, 13 May 2020 21:41:38 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E8%BF%90%E5%8A%A8%E5%8F%AF%E8%A7%86%E5%8C%96/</guid>
+      <description>简介： 本文将当前运动数据可视化研究根据数据分析特征分为三类： Box-Score Data、Tracking Data 和 Meta Data。并举例详细分析了每类的研究前沿方向。 阅读原因： 这是Mitacs项目Charls Perin教授的论文。我成功匹配到的项目就是他的移动端的运动可视化设计。所以对他的这篇综述进行了精</description>
+    </item>
+    
+  </channel>
+</rss>
