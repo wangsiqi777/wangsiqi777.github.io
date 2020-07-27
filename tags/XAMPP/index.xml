@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>XAMPP on Daqi23333的杂货小记</title>
+    <link>https://wangsiqi777.github.io/tags/XAMPP/</link>
+    <description>Recent content in XAMPP on Daqi23333的杂货小记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 17 Jun 2020 14:11:31 +0800</lastBuildDate>
+    
+	<atom:link href="https://wangsiqi777.github.io/tags/XAMPP/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>XAMPP重启之路</title>
+      <link>https://wangsiqi777.github.io/post/XAMPP%E9%87%8D%E5%90%AF%E4%B9%8B%E8%B7%AF/</link>
+      <pubDate>Wed, 17 Jun 2020 14:11:31 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/XAMPP%E9%87%8D%E5%90%AF%E4%B9%8B%E8%B7%AF/</guid>
+      <description>重新安装XAMPP路径出错问题 1.Apache 安装新版xampp后apache无法启动提示：Apache Service detected with wrong path解决方案 首先，检查一下自己的环境变量的path中是否还残留以前自己添加的xampp路径，如果有就删掉，如果没有就进行下一步。 然后就要进入自己的注册表：win+r打开运行对话框</description>
+    </item>
+    
+  </channel>
+</rss>
