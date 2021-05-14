@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PrefixSpan on Daqi23333的杂货小记</title>
+    <link>https://wangsiqi777.github.io/tags/PrefixSpan/</link>
+    <description>Recent content in PrefixSpan on Daqi23333的杂货小记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 01 May 2020 10:50:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://wangsiqi777.github.io/tags/PrefixSpan/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>数据挖掘-7-Sequential Pattern Mining</title>
+      <link>https://wangsiqi777.github.io/post/datascience-5-Adfp/</link>
+      <pubDate>Fri, 01 May 2020 10:50:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/datascience-5-Adfp/</guid>
+      <description>1. Sequential Pattern 序列(Sequence)通常以SID表示，一个序列即是一个完整的信息流。每个序列由不同的元素按顺序有序排列，每个元素由不同项目（或者也可以称之为事件）组成。 序列α在数据库S中包含序列支持度的序列个数，记为Support(α) 最小支持度阈值ξ，如果序列αα在序列数据库中的支持</description>
+    </item>
+    
+  </channel>
+</rss>

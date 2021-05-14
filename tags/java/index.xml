@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on Daqi23333的杂货小记</title>
+    <link>https://wangsiqi777.github.io/tags/java/</link>
+    <description>Recent content in java on Daqi23333的杂货小记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 25 Jul 2020 21:49:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://wangsiqi777.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>实训日记-09-SpringBoot3</title>
+      <link>https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-09/</link>
+      <pubDate>Sat, 25 Jul 2020 21:49:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-09/</guid>
+      <description>1.新建表格 2.配置完，运行mybatis插件 3.先在测试里面测试功能 选中想要循环的语言块，ctrl+t，可以直接包上循环，判断等语句 使用example实现批量操作 批量删除 批量查询4.写service接口及其实现 注入mapper 5.写controller 注入service</description>
+    </item>
+    
+    <item>
+      <title>实训日记-08-SpringBoot2</title>
+      <link>https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-08/</link>
+      <pubDate>Sun, 05 Jul 2020 21:49:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-08/</guid>
+      <description>前言 大量的注解封装、约定大于配置的原则 建包要和Application同级 static里面JS，CSS templates 里面写页面 看到红色的地方，alt+回车自动回车 配置文件 application.properties和application.yml config文件下 1. 克隆springboot项目</description>
+    </item>
+    
+    <item>
+      <title>实训日记-06-怎样处理别人的开源项目</title>
+      <link>https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-06-%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%8E%A5%E6%89%8B%E5%88%AB%E4%BA%BA%E7%9A%84%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Tue, 23 Jun 2020 21:49:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-06-%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%8E%A5%E6%89%8B%E5%88%AB%E4%BA%BA%E7%9A%84%E9%A1%B9%E7%9B%AE/</guid>
+      <description>第一步，看到用到什么技术栈，也就是说用到了什么技术/知识点，这样你就会有一个大概的方向。 第二步，看架构/框架，也可以说是看项目的目录结构，这一步可以知道各个模块是怎么通信的，这个时候可以用纸/思维导图写出来，加深印象。 第三步，跑项目/看功能，看一下这个项目实现了什么功能，可以用它</description>
+    </item>
+    
+    <item>
+      <title>实训日记-03</title>
+      <link>https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-03/</link>
+      <pubDate>Wed, 17 Jun 2020 21:49:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-03/</guid>
+      <description>实体设计 从需求中找实体类： Blog BlogCategory（可以对博客的分类进行增删改的处理） BlogComment BlogTag AdminUser 命名约定 Service/DAO层的命名约定： 获取单个对象的方法：get做前缀 获取多个对象的方法：list做前缀 获取统计值的方法：count做前缀 插入的方法：save/insert做前缀 删</description>
+    </item>
+    
+    <item>
+      <title>实训日记-02</title>
+      <link>https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-02-6.16%E4%B8%8A%E6%89%8B%E6%92%B8%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Tue, 16 Jun 2020 21:49:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-02-6.16%E4%B8%8A%E6%89%8B%E6%92%B8%E9%A1%B9%E7%9B%AE/</guid>
+      <description>MySQL忘记密码怎么办 https://cloud.tencent.com/developer/article/1188636 什么是Maven Maven 翻译为&amp;quot;专家&amp;rdquo;、&amp;ldquo;内行&amp;rdquo;，是 Apache 下的一个纯 Java 开发的开源项目。基于项目对象模型（缩写：POM）概念，Maven利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。 Maven 是一个项目管理工具，可</description>
+    </item>
+    
+    <item>
+      <title>实训日记-01-java知识串讲</title>
+      <link>https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-01/</link>
+      <pubDate>Tue, 02 Jun 2020 21:49:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-01/</guid>
+      <description>前言：开始上手 IDJK 创建project src下面创建包packet &amp;mdash;&amp;gt;项目&amp;mdash;-&amp;gt;模块 可以看wiki上有将基础的快捷方式 psvm sout 自动纠错：ALT+回车 只要是变量就可以按住ctrl键追根溯源 1. 面向对象 public 所有 protected 包内+子类 默认 包内 private 本类 2. 封装 使用get/set</description>
+    </item>
+    
+    <item>
+      <title>java 实战之路</title>
+      <link>https://wangsiqi777.github.io/post/java-%E5%AE%9E%E6%88%98%E4%B9%8B%E8%B7%AF/</link>
+      <pubDate>Tue, 31 Mar 2020 12:11:47 +0000</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/java-%E5%AE%9E%E6%88%98%E4%B9%8B%E8%B7%AF/</guid>
+      <description>入手建议 视频+看书入门：可以先看视频，更容易进入，之后针对不了解的地方看书。看不进去书可以采取抄书的方法，写在博客上之类的。 可以先实现一个最基础的业务：java仓库增删改查，可以先看看别人的项目怎么做，注重业务逻辑的建立，理清楚需要哪几个业务模块 不一定要自己动手造轮子，可以先找找</description>
+    </item>
+    
+  </channel>
+</rss>

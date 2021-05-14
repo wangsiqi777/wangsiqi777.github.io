@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ajax on Daqi23333的杂货小记</title>
+    <link>https://wangsiqi777.github.io/tags/Ajax/</link>
+    <description>Recent content in Ajax on Daqi23333的杂货小记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 26 Jul 2020 21:49:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://wangsiqi777.github.io/tags/Ajax/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>实训日记-10-SpringBoot4</title>
+      <link>https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-10/</link>
+      <pubDate>Sun, 26 Jul 2020 21:49:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/%E5%AE%9E%E8%AE%AD%E6%97%A5%E8%AE%B0-10/</guid>
+      <description>Ajax是什么 AJAX = Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）。 AJAX 不是新的编程语言，而是一种使用现有标准的新方法。 通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。 传统的网页（不使用 AJAX）如果需要更新内容</description>
+    </item>
+    
+  </channel>
+</rss>

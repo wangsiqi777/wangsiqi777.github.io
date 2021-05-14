@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>weka on Daqi23333的杂货小记</title>
+    <link>https://wangsiqi777.github.io/tags/weka/</link>
+    <description>Recent content in weka on Daqi23333的杂货小记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 29 Apr 2020 23:49:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://wangsiqi777.github.io/tags/weka/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>数据挖掘-3-WEKA实战——汽车价格的回归预测</title>
+      <link>https://wangsiqi777.github.io/post/datascience-3/</link>
+      <pubDate>Wed, 29 Apr 2020 23:49:25 +0800</pubDate>
+      
+      <guid>https://wangsiqi777.github.io/post/datascience-3/</guid>
+      <description>1. weka文件格式 数据集地址 1.1 arff文件格式 arff格式是weka专用的文件格式，全称Attribute-Relation File Format。它是一个ASCII文本文件，记录了一些共享属性的实例。arff格式是由怀卡托大学的计算机科学部门开发的。 arff格式文件主要由两个部分构成：</description>
+    </item>
+    
+  </channel>
+</rss>
